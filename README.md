@@ -1,3 +1,6 @@
+# Live Version
+https://www.etsros.gr/gods/
+
 # ⚔️ Combat Scoring System
 
 ## 📖 Overview

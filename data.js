@@ -3043,20 +3043,20 @@ const entities = [
     "name": "Oni",
     "type": "creature",
     "stats": {
-        "strength": 100,
-        "stamina": 95,
-        "speed": 70,
-        "healing": 75,
-        "influence": 85,
-        "sneakiness": 50,
-        "agility": 65,
-        "defense": 100,
-        "magicPower": 80,
-        "criticalHitChance": 70,
-        "resilience": 95,
-        "intimidation": 100,
-        "adaptability": 60,
-        "elementalResistance": 90
+      "strength": 100,
+      "stamina": 95,
+      "speed": 70,
+      "healing": 75,
+      "influence": 85,
+      "sneakiness": 50,
+      "agility": 65,
+      "defense": 100,
+      "magicPower": 80,
+      "criticalHitChance": 70,
+      "resilience": 95,
+      "intimidation": 100,
+      "adaptability": 60,
+      "elementalResistance": 90
     },
     "elements": ["destruction", "fire", "chaos"],
     "artifacts": ["Demon Club (Kanabō)", "Ogre Mask of Terror", "Cursed Oni Armor"],
@@ -3064,178 +3064,322 @@ const entities = [
     "corruptimage": "./images/oni2.webp",
     "code": "oni",
     "bio": {
-        "nationality": "Japanese",
-        "description": "Massive, fearsome ogres with horns and terrifying strength, often serving as enforcers of hell or roaming as chaos bringers.",
-        "powers": "Superhuman strength, fire resistance, demonic regeneration, and mastery over destruction.",
-        "influence": "Often portrayed as antagonists, Oni represent chaos, punishment, and the primal forces of destruction in Japanese folklore."
+      "nationality": "Japanese",
+      "description": "Massive, fearsome ogres with horns and terrifying strength, often serving as enforcers of hell or roaming as chaos bringers.",
+      "powers": "Superhuman strength, fire resistance, demonic regeneration, and mastery over destruction.",
+      "influence": "Often portrayed as antagonists, Oni represent chaos, punishment, and the primal forces of destruction in Japanese folklore."
     }
-},
-{
-  "name": "Hwanung",
-  "type": "god",
-  "stats": {
-    "strength": 85,
-    "stamina": 90,
-    "speed": 80,
-    "healing": 95,
-    "influence": 100,
-    "sneakiness": 40,
-    "agility": 75,
-    "defense": 85,
-    "magicPower": 100,
-    "criticalHitChance": 30,
-    "resilience": 90,
-    "intimidation": 70,
-    "adaptability": 80,
-    "elementalResistance": 95
   },
-  "elements": ["sky", "order", "wisdom", "divine"],
-  "artifacts": ["Celestial Seal", "Heavenly Crown", "Three Sacred Treasures"],
-  "image": "./images/hwanung.webp",
-  "corruptimage": "./images/hwanung2.webp",
-  "code": "hwanung",
-  "bio": {
-    "nationality": "Korean",
-    "description": "Hwanung descended from the heavens to create order and establish the first Korean kingdom.",
-    "powers": "Controls weather, bestows wisdom, and grants divine authority.",
-    "influence": "Regarded as the father of Gojoseon and worshipped as a divine ruler."
-  }
-},
-{
-  "name": "Dangun",
-  "type": "god",
-  "stats": {
-    "strength": 90,
-    "stamina": 85,
-    "speed": 75,
-    "healing": 90,
-    "influence": 95,
-    "sneakiness": 30,
-    "agility": 70,
-    "defense": 85,
-    "magicPower": 95,
-    "criticalHitChance": 25,
-    "resilience": 88,
-    "intimidation": 75,
-    "adaptability": 80,
-    "elementalResistance": 92
+  {
+    "name": "Hwanung",
+    "type": "god",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 80,
+      "healing": 95,
+      "influence": 100,
+      "sneakiness": 40,
+      "agility": 75,
+      "defense": 85,
+      "magicPower": 100,
+      "criticalHitChance": 30,
+      "resilience": 90,
+      "intimidation": 70,
+      "adaptability": 80,
+      "elementalResistance": 95
+    },
+    "elements": ["sky", "order", "wisdom", "divine"],
+    "artifacts": ["Celestial Seal", "Heavenly Crown", "Three Sacred Treasures"],
+    "image": "./images/hwanung.webp",
+    "corruptimage": "./images/hwanung2.webp",
+    "code": "hwanung",
+    "bio": {
+      "nationality": "Korean",
+      "description": "Hwanung descended from the heavens to create order and establish the first Korean kingdom.",
+      "powers": "Controls weather, bestows wisdom, and grants divine authority.",
+      "influence": "Regarded as the father of Gojoseon and worshipped as a divine ruler."
+    }
   },
-  "elements": ["earth", "divine", "leadership", "creation"],
-  "artifacts": ["Sacred Tiger Totem", "Ancient Crown", "Staff of the First King"],
-  "image": "./images/dangun.webp",
-  "corruptimage": "./images/dangun2.webp",
-  "code": "dangun",
-  "bio": {
-    "nationality": "Korean",
-    "description": "Son of Hwanung, the semi-divine founder of Gojoseon, and first ruler of Korea.",
-    "powers": "Blesses the land, grants prosperity, and embodies the will of the heavens.",
-    "influence": "Worshipped as the divine ancestor of the Korean people."
-  }
-},
-{
-  "name": "Haemosu",
-  "type": "god",
-  "stats": {
-    "strength": 92,
-    "stamina": 88,
-    "speed": 85,
-    "healing": 80,
-    "influence": 90,
-    "sneakiness": 35,
-    "agility": 78,
-    "defense": 80,
-    "magicPower": 100,
-    "criticalHitChance": 28,
-    "resilience": 86,
-    "intimidation": 82,
-    "adaptability": 75,
-    "elementalResistance": 97
+  {
+    "name": "Dangun",
+    "type": "god",
+    "stats": {
+      "strength": 90,
+      "stamina": 85,
+      "speed": 75,
+      "healing": 90,
+      "influence": 95,
+      "sneakiness": 30,
+      "agility": 70,
+      "defense": 85,
+      "magicPower": 95,
+      "criticalHitChance": 25,
+      "resilience": 88,
+      "intimidation": 75,
+      "adaptability": 80,
+      "elementalResistance": 92
+    },
+    "elements": ["earth", "divine", "leadership", "creation"],
+    "artifacts": ["Sacred Tiger Totem", "Ancient Crown", "Staff of the First King"],
+    "image": "./images/dangun.webp",
+    "corruptimage": "./images/dangun2.webp",
+    "code": "dangun",
+    "bio": {
+      "nationality": "Korean",
+      "description": "Son of Hwanung, the semi-divine founder of Gojoseon, and first ruler of Korea.",
+      "powers": "Blesses the land, grants prosperity, and embodies the will of the heavens.",
+      "influence": "Worshipped as the divine ancestor of the Korean people."
+    }
   },
-  "elements": ["sun", "fire", "leadership", "divine"],
-  "artifacts": ["Golden Chariot of the Sun", "Solar Disk", "Flame Spear of Haemosu"],
-  "image": "./images/haemosu.webp",
-  "corruptimage": "./images/haemosu2.webp",
-  "code": "haemosu",
-  "bio": {
-    "nationality": "Korean",
-    "description": "A celestial sun god and the father of Goguryeo’s founder, Jumong.",
-    "powers": "Harnesses sunlight, rides the sun chariot, and bestows divine blessings.",
-    "influence": "Worshipped as the embodiment of power and kingship."
-  }
-},
-{
-  "name": "Jumong",
-  "type": "god",
-  "stats": {
-    "strength": 80,
-    "stamina": 85,
-    "speed": 95,
-    "healing": 75,
-    "influence": 88,
-    "sneakiness": 50,
-    "agility": 90,
-    "defense": 70,
-    "magicPower": 80,
-    "criticalHitChance": 40,
-    "resilience": 82,
-    "intimidation": 65,
-    "adaptability": 85,
-    "elementalResistance": 85
+  {
+    "name": "Haemosu",
+    "type": "god",
+    "stats": {
+      "strength": 92,
+      "stamina": 88,
+      "speed": 85,
+      "healing": 80,
+      "influence": 90,
+      "sneakiness": 35,
+      "agility": 78,
+      "defense": 80,
+      "magicPower": 100,
+      "criticalHitChance": 28,
+      "resilience": 86,
+      "intimidation": 82,
+      "adaptability": 75,
+      "elementalResistance": 97
+    },
+    "elements": ["sun", "fire", "leadership", "divine"],
+    "artifacts": ["Golden Chariot of the Sun", "Solar Disk", "Flame Spear of Haemosu"],
+    "image": "./images/haemosu.webp",
+    "corruptimage": "./images/haemosu2.webp",
+    "code": "haemosu",
+    "bio": {
+      "nationality": "Korean",
+      "description": "A celestial sun god and the father of Goguryeo’s founder, Jumong.",
+      "powers": "Harnesses sunlight, rides the sun chariot, and bestows divine blessings.",
+      "influence": "Worshipped as the embodiment of power and kingship."
+    }
   },
-  "elements": ["archery", "strategy", "leadership", "divine"],
-  "artifacts": ["Bow of the Heavenly Archer", "Sacred Arrows of Destiny", "Cloak of the Archer King"],
-  "image": "./images/jumong.webp",
-  "corruptimage": "./images/jumong2.webp",
-  "code": "jumong",
-  "bio": {
-    "nationality": "Korean",
-    "description": "Founder of Goguryeo and the most legendary archer in Korean mythology.",
-    "powers": "Unmatched in archery, master of tactics, and blessed by divine lineage.",
-    "influence": "Revered as a hero and divine ruler of Korea’s greatest kingdom."
-  }
-},
-{
-  "name": "Yeomra",
-  "type": "god",
-  "stats": {
-    "strength": 85,
-    "stamina": 92,
-    "speed": 70,
-    "healing": 60,
-    "influence": 95,
-    "sneakiness": 20,
-    "agility": 65,
-    "defense": 95,
-    "magicPower": 100,
-    "criticalHitChance": 35,
-    "resilience": 90,
-    "intimidation": 100,
-    "adaptability": 70,
-    "elementalResistance": 98
+  {
+    "name": "Jumong",
+    "type": "god",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 95,
+      "healing": 75,
+      "influence": 88,
+      "sneakiness": 50,
+      "agility": 90,
+      "defense": 70,
+      "magicPower": 80,
+      "criticalHitChance": 40,
+      "resilience": 82,
+      "intimidation": 65,
+      "adaptability": 85,
+      "elementalResistance": 85
+    },
+    "elements": ["archery", "strategy", "leadership", "divine"],
+    "artifacts": ["Bow of the Heavenly Archer", "Sacred Arrows of Destiny", "Cloak of the Archer King"],
+    "image": "./images/jumong.webp",
+    "corruptimage": "./images/jumong2.webp",
+    "code": "jumong",
+    "bio": {
+      "nationality": "Korean",
+      "description": "Founder of Goguryeo and the most legendary archer in Korean mythology.",
+      "powers": "Unmatched in archery, master of tactics, and blessed by divine lineage.",
+      "influence": "Revered as a hero and divine ruler of Korea’s greatest kingdom."
+    }
   },
-  "elements": ["underworld", "judgment", "darkness", "divine"],
-  "artifacts": ["Staff of Judgment", "Soulbinding Chains", "Crown of the Nether King"],
-  "image": "./images/yeomra.webp",
-  "corruptimage": "./images/yeomra2.webp",
-  "code": "yeomra",
-  "bio": {
-    "nationality": "Korean",
-    "description": "King of the Underworld, who judges the souls of the dead.",
-    "powers": "Controls souls, passes final judgment, and enforces divine punishment.",
-    "influence": "Feared and revered as the ultimate authority of life and death."
+  {
+    "name": "Yeomra",
+    "type": "god",
+    "stats": {
+      "strength": 85,
+      "stamina": 92,
+      "speed": 70,
+      "healing": 60,
+      "influence": 95,
+      "sneakiness": 20,
+      "agility": 65,
+      "defense": 95,
+      "magicPower": 100,
+      "criticalHitChance": 35,
+      "resilience": 90,
+      "intimidation": 100,
+      "adaptability": 70,
+      "elementalResistance": 98
+    },
+    "elements": ["underworld", "judgment", "darkness", "divine"],
+    "artifacts": ["Staff of Judgment", "Soulbinding Chains", "Crown of the Nether King"],
+    "image": "./images/yeomra.webp",
+    "corruptimage": "./images/yeomra2.webp",
+    "code": "yeomra",
+    "bio": {
+      "nationality": "Korean",
+      "description": "King of the Underworld, who judges the souls of the dead.",
+      "powers": "Controls souls, passes final judgment, and enforces divine punishment.",
+      "influence": "Feared and revered as the ultimate authority of life and death."
+    }
+  },
+  {
+    "name": "Qilin",
+    "type": "creature",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 95,
+      "healing": 100,
+      "influence": 80,
+      "sneakiness": 40,
+      "agility": 85,
+      "defense": 90,
+      "magicPower": 95,
+      "criticalHitChance": 25,
+      "resilience": 92,
+      "intimidation": 75,
+      "adaptability": 80,
+      "elementalResistance": 95
+    },
+    "elements": ["divine", "prosperity", "fire", "earth"],
+    "artifacts": ["Celestial Hoof", "Flaming Aura", "Jade Crown of Purity"],
+    "image": "./images/qilin.webp",
+    "corruptimage": "./images/qilin2.webp",
+    "code": "qilin",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A celestial beast that brings peace and harmony wherever it treads.",
+      "powers": "Can walk on water and fire, bring blessings, and purify dark forces.",
+      "influence": "Regarded as the bringer of great fortune and prosperity."
+    }
+  },
+  {
+    "name": "Lóng (Dragon)",
+    "type": "creature",
+    "stats": {
+      "strength": 100,
+      "stamina": 95,
+      "speed": 100,
+      "healing": 85,
+      "influence": 100,
+      "sneakiness": 30,
+      "agility": 90,
+      "defense": 90,
+      "magicPower": 100,
+      "criticalHitChance": 30,
+      "resilience": 95,
+      "intimidation": 90,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["fire", "thunder", "sky", "water"],
+    "artifacts": ["Dragon Pearl", "Golden Scales", "Celestial Horns"],
+    "image": "./images/dragon.webp",
+    "corruptimage": "./images/dragon2.webp",
+    "code": "dragon",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A celestial serpent with divine power over the elements.",
+      "powers": "Controls storms, brings rain, and symbolizes imperial power.",
+      "influence": "Worshipped as the ultimate symbol of strength, wisdom, and fortune."
+    }
+  },
+  {
+    "name": "Fenghuang",
+    "type": "creature",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 95,
+      "healing": 100,
+      "influence": 90,
+      "sneakiness": 35,
+      "agility": 95,
+      "defense": 80,
+      "magicPower": 95,
+      "criticalHitChance": 25,
+      "resilience": 85,
+      "intimidation": 75,
+      "adaptability": 80,
+      "elementalResistance": 100
+    },
+    "elements": ["fire", "rebirth", "divine", "sun"],
+    "artifacts": ["Phoenix Feather", "Crown of Immortality", "Celestial Flame"],
+    "image": "./images/fenghuang.webp",
+    "corruptimage": "./images/fenghuang2.webp",
+    "code": "fenghuang",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A celestial bird that rises from its ashes, symbolizing virtue and balance.",
+      "powers": "Can resurrect itself, purify the impure, and bring balance to the world.",
+      "influence": "Regarded as the ruler of all birds and a symbol of harmony."
+    }
+  },
+  {
+    "name": "Bai Ze",
+    "type": "creature",
+    "stats": {
+      "strength": 75,
+      "stamina": 85,
+      "speed": 80,
+      "healing": 95,
+      "influence": 95,
+      "sneakiness": 50,
+      "agility": 80,
+      "defense": 85,
+      "magicPower": 100,
+      "criticalHitChance": 20,
+      "resilience": 85,
+      "intimidation": 60,
+      "adaptability": 90,
+      "elementalResistance": 95
+    },
+    "elements": ["wisdom", "protection", "divine", "cosmic energy"],
+    "artifacts": ["Book of Mysteries", "Celestial Scroll", "Golden Antlers"],
+    "image": "./images/baize.webp",
+    "corruptimage": "./images/baize2.webp",
+    "code": "baize",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A divine creature that possesses boundless wisdom and knowledge.",
+      "powers": "Can foresee the future, dispel evil, and provide divine insight.",
+      "influence": "Consulted by emperors and sages for guidance."
+    }
+  },
+  {
+    "name": "Nian",
+    "type": "creature",
+    "stats": {
+      "strength": 100,
+      "stamina": 100,
+      "speed": 85,
+      "healing": 70,
+      "influence": 60,
+      "sneakiness": 20,
+      "agility": 80,
+      "defense": 90,
+      "magicPower": 75,
+      "criticalHitChance": 35,
+      "resilience": 90,
+      "intimidation": 100,
+      "adaptability": 70,
+      "elementalResistance": 80
+    },
+    "elements": ["fear", "destruction", "chaos", "war"],
+    "artifacts": ["Beast’s Horn", "Flaming Collar", "Red Banner of Protection"],
+    "image": "./images/nian.webp",
+    "corruptimage": "./images/nian2.webp",
+    "code": "nian",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A monstrous creature that terrorized villages before being subdued by fire and noise.",
+      "powers": "Extremely strong and resilient, but weak to loud noises and fire.",
+      "influence": "The legend of its defeat led to the traditions of the Lunar New Year celebrations."
+    }
   }
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
