@@ -1,5 +1,5 @@
 # Live Version
-https://www.etsros.gr/gods/
+https://www.estros.gr/gods/
 
 # ⚔️ Combat Scoring System
 
