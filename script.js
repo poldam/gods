@@ -286,6 +286,11 @@ function updateFighterImage(fighter) {
 
     const selectedEntity = entities.find((e) => e.name === select.value);
 
+    if(fighter === 1)
+        updateFighterStats("fighter1", selectedEntity.stats);
+    else
+        updateFighterStats("fighter2", selectedEntity.stats);
+
     if (selectedEntity) {
         image.src = corruption.checked ? selectedEntity.corruptimage : selectedEntity.image;
     } else {
