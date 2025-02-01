@@ -45,7 +45,7 @@ select {
 }
 
 .fighter-image {
-  width: 100%;
+  width: 66%;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -62,3 +62,30 @@ select {
   gap: 10px;
   font-size: 1.1rem;
 }
+
+.stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  padding: 3px;
+  border: 1px solid #fff;
+  border-radius: 26px;
+  background-color: #fff;
+}
+
+.stat-item i {
+  margin: 2px;
+  font-size: 18px;
+  color: #333;
+}
+

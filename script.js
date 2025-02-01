@@ -133,6 +133,26 @@ document.getElementById("fightButton").addEventListener("click", () => {
     const score2 = result2.score;
     const summary2 = result2.fightSummary;
 
+    //////////////////////////////////////////////////
+    //////////////////////////////////////////////////
+    // Calculate percentages for the progress bar
+    const totalScore = score1 + score2;
+    const fighter1Percentage = (score1 / totalScore) * 100;
+    const fighter2Percentage = (score2 / totalScore) * 100;
+
+    document.getElementById("fighter1Name").textContent = fighter1.name;
+    document.getElementById("fighter2Name").textContent = fighter2.name;
+
+    // Set progress bar widths
+    document.getElementById("fighter1Bar").style.width = fighter1Percentage + "%";
+    document.getElementById("fighter2Bar").style.width = fighter2Percentage + "%";
+
+    // Update progress bar labels
+    document.getElementById("fighter1Bar").textContent = Math.round(fighter1Percentage) + "%";
+    document.getElementById("fighter2Bar").textContent = Math.round(fighter2Percentage) + "%";
+    ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+
     // Determine the winner and print out the fight details
     let fightOutcome = "";
 
@@ -307,6 +327,15 @@ function randomizeSelections() {
     fighter1Bio.innerHTML = generateBioHTML(randomFighter1);
 
     fighter2Bio.innerHTML = generateBioHTML(randomFighter2);
+
+    updateFighterStats("fighter1", randomFighter1.stats);
+    updateFighterStats("fighter2", randomFighter2.stats);
+
+    // Activate Bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(function (tooltipEl) {
+        new bootstrap.Tooltip(tooltipEl);
+    });
 }
 
 // stats: {
@@ -641,6 +670,76 @@ const artifactStatBonuses = {
     // ======= Strength & Titan Power =======
     "Stone of the Cyclops": { strength: 20, resilience: 15 }, // Grants immense physical power
 
+    "Ancient Crown": { influence: 15, adaptability: 10 },
+    "Beast’s Horn": { strength: 12, intimidation: 15 },
+    "Book of Mysteries": { magicPower: 15, knowledge: 12 },
+    "Bow of Ishtar": { agility: 10, speed: 12, criticalHitChance: 15 },
+    "Bow of the Heavenly Archer": { agility: 15, speed: 10, strength: 10 },
+    "Celestial Bow of Marduk": { magicPower: 20, strength: 12, influence: 10 },
+    "Celestial Flame": { fire: 15, magicPower: 12, healing: 8 },
+    "Celestial Hoof": { speed: 15, adaptability: 10, resilience: 8 },
+    "Celestial Horns": { intimidation: 12, strength: 10, influence: 10 },
+    "Celestial Scepter": { magicPower: 20, influence: 12 },
+    "Celestial Scroll": { knowledge: 15, wisdom: 12, adaptability: 8 },
+    "Celestial Seal": { elementalResistance: 20, magicPower: 10 },
+    "Claws of Endless Hunger": { sneakiness: 15, strength: 10, criticalHitChance: 12 },
+    "Cloak of the Archer King": { agility: 12, sneakiness: 10, adaptability: 10 },
+    "Crown of Immortality": { healing: 15, resilience: 12, influence: 10 },
+    "Crown of Radiance": { light: 20, influence: 15, adaptability: 8 },
+    "Crown of the Abyss": { darkness: 18, magicPower: 12, intimidation: 10 },
+    "Crown of the Basilisk": { poison: 15, intimidation: 12, resilience: 10 },
+    "Crown of the Dead": { underworld: 20, influence: 15, adaptability: 8 },
+    "Crown of the Morning Star": { fire: 15, influence: 12, speed: 10 },
+    "Crown of the Nether King": { darkness: 18, strength: 12, intimidation: 10 },
+    "Crown of the Sky": { wind: 15, speed: 12, agility: 10 },
+    "Crown of the Underworld": { underworld: 20, magicPower: 12, intimidation: 15 },
+    "Curse of the Wendigo": { sneakiness: 20, intimidation: 12, elementalResistance: 10 },
+    "Cursed Bridle": { sneakiness: 15, intimidation: 12, adaptability: 10 },
+    "Divine Tablet": { knowledge: 20, wisdom: 12, magicPower: 10 },
+    "Dragon Pearl": { magicPower: 15, adaptability: 12, elementalResistance: 10 },
+    "Dragon-Slaying Sword": { strength: 18, criticalHitChance: 15, speed: 10 },
+    "Flame Spear of Haemosu": { fire: 20, strength: 12, criticalHitChance: 10 },
+    "Flaming Aura": { fire: 15, intimidation: 12, resilience: 10 },
+    "Flaming Collar": { fire: 15, resilience: 12, healing: 10 },
+    "Flaming Sword of Judgment": { fire: 20, justice: 12, influence: 10 },
+    "Frozen Heart": { winter: 20, resilience: 12, elementalResistance: 10 },
+    "Golden Antlers": { nature: 15, influence: 12, adaptability: 10 },
+    "Golden Chariot of the Sun": { light: 20, speed: 12, influence: 10 },
+    "Golden Scales": { justice: 18, resilience: 12, adaptability: 10 },
+    "Heavenly Crown": { divinity: 20, influence: 15, resilience: 10 },
+    "Jade Crown of Purity": { purity: 18, healing: 15, influence: 10 },
+    "Lunar Crown": { moon: 20, magicPower: 12, wisdom: 10 },
+    "Moonstone of Prophecy": { prophecy: 18, knowledge: 15, magicPower: 12 },
+    "Petrifying Gaze": { intimidation: 20, sneakiness: 12, resilience: 10 },
+    "Phoenix Feather": { rebirth: 20, healing: 15, adaptability: 10 },
+    "Ragnarok Scales": { chaos: 20, destruction: 12, resilience: 10 },
+    "Red Banner of Protection": { protection: 18, defense: 15, adaptability: 10 },
+    "Red Eyes of the Hunter": { sneakiness: 20, speed: 12, criticalHitChance: 10 },
+    "Sacred Arrows of Destiny": { archery: 18, criticalHitChance: 15, influence: 10 },
+    "Sacred Lion": { warrior: 20, strength: 12, intimidation: 10 },
+    "Sacred Tiger Totem": { warrior: 18, agility: 15, speed: 10 },
+    "Sacred Waterskin": { water: 20, healing: 12, resilience: 10 },
+    "Scythe of Pestilence": { disease: 20, intimidation: 12, adaptability: 10 },
+    "Serpent’s Fang": { poison: 20, sneakiness: 12, criticalHitChance: 10 },
+    "Shadow Cloak": { darkness: 20, sneakiness: 15, agility: 10 },
+    "Shroud of Shadows": { darkness: 18, sneakiness: 15, adaptability: 10 },
+    "Silver Sickle of Fate": { fate: 20, knowledge: 12, influence: 10 },
+    "Skull of the Abyss": { chaos: 18, intimidation: 15, magicPower: 10 },
+    "Solar Disk of Truth": { light: 20, influence: 12, knowledge: 10 },
+    "Staff of Judgment": { judgment: 18, influence: 15, adaptability: 10 },
+    "Staff of the Deep": { sea: 20, resilience: 12, magicPower: 10 },
+    "Staff of the First King": { leadership: 20, influence: 15, adaptability: 10 },
+    "Storm Crown": { thunder: 18, wind: 12, magicPower: 10 },
+    "Tablet of Destinies": { fate: 20, knowledge: 15, influence: 10 },
+    "Tablet of Enki": { wisdom: 18, magicPower: 15, knowledge: 12 },
+    "Tablet of Fate": { prophecy: 20, adaptability: 12, knowledge: 10 },
+    "Three Sacred Treasures": { divinity: 18, protection: 15, resilience: 10 },
+    "Tide of Pestilence": { disease: 20, sea: 12, intimidation: 10 },
+    "Vampiric Talons": { blood: 20, sneakiness: 12, criticalHitChance: 10 },
+    "Venomous Fangs": { poison: 18, sneakiness: 15, intimidation: 10 },
+    "War Banner of Nergal": { war: 20, strength: 15, intimidation: 12 },
+    "Waves of Ruin": { sea: 18, destruction: 15, adaptability: 10 },
+    "Winds of Enlil": { wind: 20, speed: 12, agility: 10 }
 };
 
 // Stage Modifiers
@@ -760,6 +859,23 @@ const elementSynergies = {
     "cosmos": ["chaos"]
 };
 
+function updateFighterStats(fighterId, fighterData) {
+    document.getElementById(`${fighterId}-strength`).textContent = fighterData.strength;
+    document.getElementById(`${fighterId}-stamina`).textContent = fighterData.stamina;
+    document.getElementById(`${fighterId}-speed`).textContent = fighterData.speed;
+    document.getElementById(`${fighterId}-healing`).textContent = fighterData.healing;
+    document.getElementById(`${fighterId}-influence`).textContent = fighterData.influence;
+    document.getElementById(`${fighterId}-sneakiness`).textContent = fighterData.sneakiness;
+    document.getElementById(`${fighterId}-agility`).textContent = fighterData.agility;
+    document.getElementById(`${fighterId}-defense`).textContent = fighterData.defense;
+    document.getElementById(`${fighterId}-magicPower`).textContent = fighterData.magicPower;
+    document.getElementById(`${fighterId}-criticalHitChance`).textContent = fighterData.criticalHitChance;
+    document.getElementById(`${fighterId}-resilience`).textContent = fighterData.resilience;
+    document.getElementById(`${fighterId}-intimidation`).textContent = fighterData.intimidation;
+    document.getElementById(`${fighterId}-adaptability`).textContent = fighterData.adaptability;
+    document.getElementById(`${fighterId}-elementalResistance`).textContent = fighterData.elementalResistance;
+}
+
 function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, opponent) {
     let score = 0;
     let details = [];
@@ -858,8 +974,8 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
 
     // God vs. Creature 30% Bonus
     if ((fighter.type === "god" || fighter.type === "goddess") && opponent && opponent.type === "creature") {
-        score += 20
-        details.push(`God vs Creature Bonus: +20`);
+        score += 50
+        details.push(`God vs Creature Bonus: +50`);
         let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
 
         if (overlappingElements.length > 0) {
@@ -899,7 +1015,7 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
     // Artifact Modifiers
     if (selectedArtifact && selectedArtifact !== "none") {
         if (fighter.artifacts.includes(selectedArtifact)) {
-            const artifactSpecialBonus = 25;
+            const artifactSpecialBonus = 50;
             score += artifactSpecialBonus;
             details.push(`Artifact Bonus (Special for ${fighter.name} with ${selectedArtifact}): +${artifactSpecialBonus}`);
             narrative.push(`The ${selectedArtifact} synergized perfectly with ${fighter.name}'s abilities.`);
@@ -995,7 +1111,7 @@ function logUndefinedArtifacts(entities) {
 
 // logAllUniqueElements(entities);
 // logAllUniqueArtifacts(entities)
-// logUndefinedArtifacts(entities)
+logUndefinedArtifacts(entities)
 
 ////////////////////////////////////////////
 ////////////////////////////////////////////

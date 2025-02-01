@@ -3379,9 +3379,658 @@ const entities = [
       "powers": "Extremely strong and resilient, but weak to loud noises and fire.",
       "influence": "The legend of its defeat led to the traditions of the Lunar New Year celebrations."
     }
+  },
+  {
+    "name": "Anu",
+    "type": "god",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 75,
+      "healing": 80,
+      "influence": 100,
+      "sneakiness": 40,
+      "agility": 70,
+      "defense": 95,
+      "magicPower": 100,
+      "criticalHitChance": 20,
+      "resilience": 90,
+      "intimidation": 85,
+      "adaptability": 75,
+      "elementalResistance": 100
+    },
+    "elements": ["sky", "divine", "creation", "cosmos"],
+    "artifacts": ["Crown of the Sky", "Celestial Scepter", "Tablet of Fate"],
+    "image": "./images/anu.webp",
+    "corruptimage": "./images/anu2.webp",
+    "code": "anu",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The supreme god of the sky and ruler of the heavens.",
+      "powers": "Commands the celestial realm, decrees the fate of gods and mortals.",
+      "influence": "Worshiped as the ultimate father of the gods, granting divine authority."
+    }
+  },
+  {
+    "name": "Enlil",
+    "type": "god",
+    "stats": {
+      "strength": 90,
+      "stamina": 85,
+      "speed": 80,
+      "healing": 70,
+      "influence": 95,
+      "sneakiness": 35,
+      "agility": 75,
+      "defense": 90,
+      "magicPower": 90,
+      "criticalHitChance": 25,
+      "resilience": 85,
+      "intimidation": 90,
+      "adaptability": 80,
+      "elementalResistance": 100
+    },
+    "elements": ["wind", "storm", "judgment", "divinity"],
+    "artifacts": ["Storm Crown", "Winds of Enlil", "Divine Tablet"],
+    "image": "./images/enlil.webp",
+    "corruptimage": "./images/enlil2.webp",
+    "code": "enlil",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "God of wind, air, and storms, often seen as a king of the gods.",
+      "powers": "Controls tempests, decrees the fate of rulers, wields divine authority.",
+      "influence": "Held supreme power over the pantheon and human civilization."
+    }
+  },
+  {
+    "name": "Ea (Enki)",
+    "type": "god",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 75,
+      "healing": 100,
+      "influence": 95,
+      "sneakiness": 45,
+      "agility": 70,
+      "defense": 85,
+      "magicPower": 100,
+      "criticalHitChance": 20,
+      "resilience": 90,
+      "intimidation": 70,
+      "adaptability": 90,
+      "elementalResistance": 95
+    },
+    "elements": ["water", "wisdom", "magic", "creation"],
+    "artifacts": ["Sacred Waterskin", "Tablet of Enki", "Staff of the Deep"],
+    "image": "./images/enki.webp",
+    "corruptimage": "./images/enki2.webp",
+    "code": "enki",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The god of wisdom, magic, and freshwater, revered as the source of life and knowledge.",
+      "powers": "Controls rivers and oceans, grants divine wisdom, and shapes reality with magic.",
+      "influence": "Known as the protector of humanity and the ultimate source of sacred knowledge."
+    }
+  },
+  {
+    "name": "Marduk",
+    "type": "god",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 80,
+      "healing": 85,
+      "influence": 100,
+      "sneakiness": 40,
+      "agility": 75,
+      "defense": 95,
+      "magicPower": 100,
+      "criticalHitChance": 30,
+      "resilience": 95,
+      "intimidation": 90,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["creation", "battle", "divine", "cosmic balance"],
+    "artifacts": ["Tablet of Destinies", "Celestial Bow of Marduk", "Dragon-Slaying Sword"],
+    "image": "./images/marduk.webp",
+    "corruptimage": "./images/marduk2.webp",
+    "code": "marduk",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The chief god of Babylon, known as the slayer of Tiamat and ruler of creation.",
+      "powers": "Commands divine authority, wields celestial magic, and maintains cosmic order.",
+      "influence": "Revered as the supreme deity of Babylon, entrusted with ruling the gods and humans alike."
+    }
+  },
+  {
+    "name": "Ishtar (Inanna)",
+    "type": "goddess",
+    "stats": {
+      "strength": 90,
+      "stamina": 85,
+      "speed": 95,
+      "healing": 80,
+      "influence": 100,
+      "sneakiness": 70,
+      "agility": 90,
+      "defense": 85,
+      "magicPower": 95,
+      "criticalHitChance": 35,
+      "resilience": 80,
+      "intimidation": 85,
+      "adaptability": 90,
+      "elementalResistance": 95
+    },
+    "elements": ["love", "beauty", "war", "fertility"],
+    "artifacts": ["Crown of the Morning Star", "Bow of Ishtar", "Sacred Lion"],
+    "image": "./images/ishtar.webp",
+    "corruptimage": "./images/ishtar2.webp",
+    "code": "ishtar",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The goddess of love, beauty, war, and fertility, both creator and destroyer.",
+      "powers": "Commands passion and chaos, brings both prosperity and destruction.",
+      "influence": "Revered as the Queen of Heaven, she holds sway over love, war, and divine power."
+    }
+  },
+  {
+    "name": "Nergal",
+    "type": "god",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 85,
+      "healing": 70,
+      "influence": 90,
+      "sneakiness": 50,
+      "agility": 80,
+      "defense": 95,
+      "magicPower": 90,
+      "criticalHitChance": 40,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 75,
+      "elementalResistance": 95
+    },
+    "elements": ["underworld", "war", "plague", "destruction"],
+    "artifacts": ["Scythe of Pestilence", "Crown of the Dead", "War Banner of Nergal"],
+    "image": "./images/nergal.webp",
+    "corruptimage": "./images/nergal2.webp",
+    "code": "nergal",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The god of the underworld, war, and plague, feared for his destructive power.",
+      "powers": "Commands legions of the dead, spreads disease, and wields unmatched martial strength.",
+      "influence": "Worshiped as a god of both war and death, ruling over the realm of the deceased."
+    }
+  },
+  {
+    "name": "Shamash (Utu)",
+    "type": "god",
+    "stats": {
+      "strength": 90,
+      "stamina": 95,
+      "speed": 85,
+      "healing": 100,
+      "influence": 95,
+      "sneakiness": 30,
+      "agility": 80,
+      "defense": 90,
+      "magicPower": 95,
+      "criticalHitChance": 25,
+      "resilience": 100,
+      "intimidation": 80,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["sun", "justice", "light", "divine"],
+    "artifacts": ["Solar Disk of Truth", "Flaming Sword of Judgment", "Crown of Radiance"],
+    "image": "./images/shamash.webp",
+    "corruptimage": "./images/shamash2.webp",
+    "code": "shamash",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The sun god and divine arbiter of justice, illuminating the world with truth and order.",
+      "powers": "Dispels darkness, enforces divine justice, and grants wisdom.",
+      "influence": "Revered as the ultimate judge of gods and mortals, ensuring fairness and righteousness."
+    }
+  },
+  {
+    "name": "Sin (Nanna)",
+    "type": "god",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 90,
+      "healing": 95,
+      "influence": 100,
+      "sneakiness": 60,
+      "agility": 85,
+      "defense": 90,
+      "magicPower": 100,
+      "criticalHitChance": 20,
+      "resilience": 85,
+      "intimidation": 70,
+      "adaptability": 90,
+      "elementalResistance": 100
+    },
+    "elements": ["moon", "wisdom", "time", "divine"],
+    "artifacts": ["Lunar Crown", "Silver Sickle of Fate", "Moonstone of Prophecy"],
+    "image": "./images/sin.webp",
+    "corruptimage": "./images/sin2.webp",
+    "code": "sin",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The god of the moon, wisdom, and time, overseeing the passage of nights and fate.",
+      "powers": "Controls the cycles of the moon, grants prophetic visions, and influences time.",
+      "influence": "Revered as a celestial guide, his divine light illuminates the path of kings and seers."
+    }
+  },
+  {
+    "name": "Ereshkigal",
+    "type": "goddess",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 75,
+      "healing": 70,
+      "influence": 95,
+      "sneakiness": 65,
+      "agility": 80,
+      "defense": 100,
+      "magicPower": 100,
+      "criticalHitChance": 30,
+      "resilience": 100,
+      "intimidation": 95,
+      "adaptability": 75,
+      "elementalResistance": 100
+    },
+    "elements": ["underworld", "death", "darkness", "judgment"],
+    "artifacts": ["Crown of the Underworld", "Staff of Judgment", "Shroud of Shadows"],
+    "image": "./images/ereshkigal.webp",
+    "corruptimage": "./images/ereshkigal2.webp",
+    "code": "ereshkigal",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The goddess of the underworld, ruling over the dead with absolute authority.",
+      "powers": "Commands spirits, enforces judgment, and controls the domain of the afterlife.",
+      "influence": "Feared and revered as the Queen of the Dead, deciding the fate of mortal souls."
+    }
+  },
+  {
+    "name": "Tiamat",
+    "type": "goddess",
+    "stats": {
+      "strength": 100,
+      "stamina": 100,
+      "speed": 80,
+      "healing": 90,
+      "influence": 95,
+      "sneakiness": 50,
+      "agility": 85,
+      "defense": 100,
+      "magicPower": 100,
+      "criticalHitChance": 35,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["chaos", "sea", "destruction", "creation"],
+    "artifacts": ["Crown of the Abyss", "Serpent’s Fang", "Waves of Ruin"],
+    "image": "./images/tiamat.webp",
+    "corruptimage": "./images/tiamat2.webp",
+    "code": "tiamat",
+    "bio": {
+      "nationality": "Mesopotamian",
+      "description": "The primordial goddess of chaos and the sea, the mother of terrifying creatures.",
+      "powers": "Creates monstrous beings, controls the oceans, and embodies destruction and chaos.",
+      "influence": "Feared as the force of primordial destruction, the embodiment of chaos itself."
+    }
+  },
+  {
+    "name": "Jörmungandr",
+    "type": "creature",
+    "stats": {
+      "strength": 100,
+      "stamina": 100,
+      "speed": 85,
+      "healing": 90,
+      "influence": 80,
+      "sneakiness": 70,
+      "agility": 75,
+      "defense": 100,
+      "magicPower": 85,
+      "criticalHitChance": 40,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["chaos", "sea", "destruction", "poison"],
+    "artifacts": ["Venomous Fangs", "Tidal Crown", "Ragnarok Scales"],
+    "image": "./images/jormungandr.webp",
+    "corruptimage": "./images/jormungandr2.webp",
+    "code": "jormungandr",
+    "bio": {
+      "nationality": "Norse",
+      "description": "The Midgard Serpent, a monstrous sea serpent so large it encircles the world.",
+      "powers": "Can unleash world-ending poison, cause massive tidal waves, and bring Ragnarok.",
+      "influence": "Feared as the ultimate beast of destruction, prophesied to fight Thor during the end times."
+    }
+  },
+  {
+    "name": "Wendigo",
+    "type": "creature",
+    "stats": {
+      "strength": 85,
+      "stamina": 95,
+      "speed": 100,
+      "healing": 70,
+      "influence": 75,
+      "sneakiness": 100,
+      "agility": 95,
+      "defense": 80,
+      "magicPower": 90,
+      "criticalHitChance": 50,
+      "resilience": 85,
+      "intimidation": 100,
+      "adaptability": 70,
+      "elementalResistance": 90
+    },
+    "elements": ["winter", "darkness", "cannibalism", "curse"],
+    "artifacts": ["Frozen Heart", "Curse of the Wendigo", "Claws of Endless Hunger"],
+    "image": "./images/wendigo.webp",
+    "corruptimage": "./images/wendigo2.webp",
+    "code": "wendigo",
+    "bio": {
+      "nationality": "Algonquian",
+      "description": "A skeletal, emaciated monster with glowing eyes and a hunger that can never be satisfied.",
+      "powers": "Moves swiftly through the frozen wilderness, spreads curses, and devours souls.",
+      "influence": "Feared as a spirit of endless hunger, driving men to madness and cannibalism."
+    }
+  },
+  {
+    "name": "Basilisk",
+    "type": "creature",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 70,
+      "healing": 60,
+      "influence": 95,
+      "sneakiness": 90,
+      "agility": 75,
+      "defense": 90,
+      "magicPower": 100,
+      "criticalHitChance": 50,
+      "resilience": 85,
+      "intimidation": 100,
+      "adaptability": 80,
+      "elementalResistance": 100
+    },
+    "elements": ["poison", "death", "darkness", "chaos"],
+    "artifacts": ["Crown of the Basilisk", "Venomous Fangs", "Petrifying Gaze"],
+    "image": "./images/basilisk.webp",
+    "corruptimage": "./images/basilisk2.webp",
+    "code": "basilisk",
+    "bio": {
+      "nationality": "European",
+      "description": "A monstrous serpent whose gaze turns victims to stone and whose breath spreads death.",
+      "powers": "Instantly petrifies foes, emits deadly poison, and moves with sinister stealth.",
+      "influence": "Feared across legends as the ultimate symbol of death and destruction."
+    }
+  },
+  {
+    "name": "Chupacabra",
+    "type": "creature",
+    "stats": {
+      "strength": 75,
+      "stamina": 85,
+      "speed": 95,
+      "healing": 70,
+      "influence": 65,
+      "sneakiness": 100,
+      "agility": 90,
+      "defense": 80,
+      "magicPower": 60,
+      "criticalHitChance": 55,
+      "resilience": 75,
+      "intimidation": 90,
+      "adaptability": 85,
+      "elementalResistance": 80
+    },
+    "elements": ["darkness", "fear", "blood", "night"],
+    "artifacts": ["Vampiric Talons", "Red Eyes of the Hunter", "Shadow Cloak"],
+    "image": "./images/chupacabra.webp",
+    "corruptimage": "./images/chupacabra2.webp",
+    "code": "chupacabra",
+    "bio": {
+      "nationality": "Latin American",
+      "description": "A night-stalking predator with glowing red eyes and spiny ridges along its back.",
+      "powers": "Moves undetected, drains the blood of its victims, and induces paralyzing fear.",
+      "influence": "Feared across the Americas as an elusive monster that preys upon the weak and unsuspecting."
+    }
+  },
+  {
+    "name": "Nuckelavee",
+    "type": "creature",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 80,
+      "healing": 50,
+      "influence": 85,
+      "sneakiness": 70,
+      "agility": 85,
+      "defense": 80,
+      "magicPower": 90,
+      "criticalHitChance": 45,
+      "resilience": 90,
+      "intimidation": 100,
+      "adaptability": 80,
+      "elementalResistance": 85
+    },
+    "elements": ["darkness", "sea", "disease", "death"],
+    "artifacts": ["Cursed Bridle", "Tide of Pestilence", "Skull of the Abyss"],
+    "image": "./images/nuckelavee.webp",
+    "corruptimage": "./images/nuckelavee2.webp",
+    "code": "nuckelavee",
+    "bio": {
+      "nationality": "Scottish",
+      "description": "A nightmarish, skinless hybrid of horse and rider, dripping with seawater and decay.",
+      "powers": "Spreads disease, controls dark waters, and induces crippling fear in its victims.",
+      "influence": "Dreaded across the Orkney Isles as an unstoppable force of destruction from the depths."
+    }
+  },
+  {
+    "name": "Chimera",
+    "type": "creature",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 80,
+      "healing": 70,
+      "influence": 85,
+      "sneakiness": 60,
+      "agility": 90,
+      "defense": 85,
+      "magicPower": 100,
+      "criticalHitChance": 50,
+      "resilience": 90,
+      "intimidation": 100,
+      "adaptability": 85,
+      "elementalResistance": 95
+    },
+    "elements": ["fire", "chaos", "warrior", "darkness"],
+    "artifacts": ["Flaming Sword of Judgment", "Venomous Fangs", "Crown of the Abyss"],
+    "image": "./images/chimera.webp",
+    "corruptimage": "./images/chimera2.webp",
+    "code": "chimera",
+    "bio": {
+      "nationality": "Greek",
+      "description": "A horrifying hybrid with a lion's body, a goat’s head growing from its back, and a venomous serpent as a tail.",
+      "powers": "Breathes fire, possesses immense strength, and strikes with deadly venom.",
+      "influence": "Feared across the ancient world as a symbol of chaos and destruction, often seen as an omen of disaster."
+    }
+  },
+  {
+    "name": "Sphinx",
+    "type": "creature",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 75,
+      "healing": 80,
+      "influence": 100,
+      "sneakiness": 70,
+      "agility": 85,
+      "defense": 95,
+      "magicPower": 90,
+      "criticalHitChance": 40,
+      "resilience": 90,
+      "intimidation": 95,
+      "adaptability": 80,
+      "elementalResistance": 100
+    },
+    "elements": ["wisdom", "justice", "sun", "order"],
+    "artifacts": ["Crown of Radiance", "Solar Disk of Truth", "Tablet of Destinies"],
+    "image": "./images/sphinx.webp",
+    "corruptimage": "./images/sphinx2.webp",
+    "code": "sphinx",
+    "bio": {
+      "nationality": "Egyptian & Greek",
+      "description": "A majestic guardian with the body of a lion, the wings of an eagle, and the head of a wise ruler.",
+      "powers": "Tests mortals with riddles, possesses immense wisdom, and enforces divine order.",
+      "influence": "Feared and revered across civilizations as a keeper of knowledge and the judge of those who seek forbidden truths."
+    }
+  },
+  {
+    "name": "Manticore",
+    "type": "creature",
+    "stats": {
+      "strength": 90,
+      "stamina": 85,
+      "speed": 95,
+      "healing": 70,
+      "influence": 80,
+      "sneakiness": 75,
+      "agility": 90,
+      "defense": 85,
+      "magicPower": 75,
+      "criticalHitChance": 50,
+      "resilience": 85,
+      "intimidation": 100,
+      "adaptability": 80,
+      "elementalResistance": 90
+    },
+    "elements": ["darkness", "chaos", "warrior", "venom"],
+    "artifacts": ["Venomous Fangs", "Crown of the Abyss", "Shadow Cloak"],
+    "image": "./images/manticore.webp",
+    "corruptimage": "./images/manticore2.webp",
+    "code": "manticore",
+    "bio": {
+      "nationality": "Persian & Greek",
+      "description": "A monstrous fusion of a lion, a human-like face, and a venomous scorpion tail, feared across ancient civilizations.",
+      "powers": "Launches deadly venomous spines, possesses immense speed, and tears foes apart with razor-sharp claws.",
+      "influence": "A nightmare of the desert, feared as a demon of the sands and a relentless predator."
+    }
+  },
+  {
+    "name": "Kraken",
+    "type": "creature",
+    "stats": {
+      "strength": 100,
+      "stamina": 95,
+      "speed": 60,
+      "healing": 85,
+      "influence": 90,
+      "sneakiness": 40,
+      "agility": 75,
+      "defense": 100,
+      "magicPower": 80,
+      "criticalHitChance": 30,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 90,
+      "elementalResistance": 100
+    },
+    "elements": ["water", "chaos", "destruction", "storm"],
+    "artifacts": ["Trident of Poseidon", "Waves of Ruin", "Staff of the Deep"],
+    "image": "./images/kraken.webp",
+    "corruptimage": "./images/kraken2.webp",
+    "code": "kraken",
+    "bio": {
+      "nationality": "Norse",
+      "description": "A massive sea beast with enormous tentacles capable of dragging entire ships into the abyss.",
+      "powers": "Creates devastating whirlpools, crushes ships with its tentacles, and commands the fury of the ocean.",
+      "influence": "A legendary terror of the seas, worshiped and feared by sailors for centuries."
+    }
+  },
+  {
+    "name": "Fenrir",
+    "type": "creature",
+    "stats": {
+      "strength": 100,
+      "stamina": 95,
+      "speed": 85,
+      "healing": 90,
+      "influence": 90,
+      "sneakiness": 60,
+      "agility": 85,
+      "defense": 100,
+      "magicPower": 70,
+      "criticalHitChance": 40,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 80,
+      "elementalResistance": 95
+    },
+    "elements": ["chaos", "darkness", "warrior", "destruction"],
+    "artifacts": ["Chains of Fate", "Crown of the Abyss", "Storm Bracers"],
+    "image": "./images/fenrir.webp",
+    "corruptimage": "./images/fenrir2.webp",
+    "code": "fenrir",
+    "bio": {
+      "nationality": "Norse",
+      "description": "A colossal wolf, son of Loki, fated to break free and devour Odin during Ragnarok.",
+      "powers": "Possesses immense strength, can break any chains, and spreads destruction wherever it treads.",
+      "influence": "A feared omen of doom, symbolizing chaos and the inevitable fall of the gods."
+    }
+},
+{
+  "name": "Gorgon",
+  "type": "creature",
+  "stats": {
+    "strength": 85,
+    "stamina": 90,
+    "speed": 80,
+    "healing": 75,
+    "influence": 95,
+    "sneakiness": 85,
+    "agility": 90,
+    "defense": 95,
+    "magicPower": 100,
+    "criticalHitChance": 45,
+    "resilience": 90,
+    "intimidation": 100,
+    "adaptability": 80,
+    "elementalResistance": 95
+  },
+  "elements": ["darkness", "petrification", "chaos", "venom"],
+  "artifacts": ["Petrifying Gaze", "Crown of the Basilisk", "Venomous Fangs"],
+  "image": "./images/gorgon.webp",
+  "corruptimage": "./images/gorgon2.webp",
+  "code": "gorgon",
+  "bio": {
+    "nationality": "Greek",
+    "description": "A terrifying creature with snakes for hair, whose gaze turns anyone to stone.",
+    "powers": "Petrifies foes with a single look, possesses venomous bites, and exudes an aura of dread.",
+    "influence": "One of the most feared monsters in mythology, serving as a warning of divine punishment and curse."
   }
-
-
+}
 
 
 ];
