@@ -122,11 +122,9 @@ document.getElementById("fightButton").addEventListener("click", () => {
         return;
     }
 
-    // Call the calculateScore function for both fighters
     const result1 = calculateScore(fighter1, stage, weather, corruption1, artifact, fighter2);
     const result2 = calculateScore(fighter2, stage, weather, corruption2, artifact, fighter1);
 
-    // Extract the scores and fight summaries
     const score1 = result1.score;
     const summary1 = result1.fightSummary;
 
@@ -143,17 +141,14 @@ document.getElementById("fightButton").addEventListener("click", () => {
     document.getElementById("fighter1Name").textContent = fighter1.name;
     document.getElementById("fighter2Name").textContent = fighter2.name;
 
-    // Set progress bar widths
     document.getElementById("fighter1Bar").style.width = fighter1Percentage + "%";
     document.getElementById("fighter2Bar").style.width = fighter2Percentage + "%";
 
-    // Update progress bar labels
     document.getElementById("fighter1Bar").textContent = Math.round(fighter1Percentage) + "%";
     document.getElementById("fighter2Bar").textContent = Math.round(fighter2Percentage) + "%";
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
 
-    // Determine the winner and print out the fight details
     let fightOutcome = "";
 
     if (score1 > score2) {
@@ -166,15 +161,14 @@ document.getElementById("fightButton").addEventListener("click", () => {
 
     battleResultModalLabel.innerHTML = `${weather} ${stage} battle results`;
 
-    // Display the results in the console or on your UI
     console.log("\n=== Fight Details ===");
     console.log(`Stage: ${stage}`);
     console.log(`Weather: ${weather}`);
     console.log(`Artifact: ${artifact}`);
-    // console.log("Fighter 1 Summary:");
+    
     if (summary1)
         console.log(summary1);
-    // console.log("Fighter 2 Summary:");
+    
     if (summary2)
         console.log(summary2);
     console.log("Outcome:");
@@ -216,18 +210,14 @@ document.getElementById("fightButton").addEventListener("click", () => {
     img.src = imagePath;
 
     img.onload = function () {
-        // If the image exists, display it
         resultImage.src = imagePath;
         resultImage.style.display = "block";
     };
 
     img.onerror = function () {
-        // If the image does not exist, hide the image element or display a fallback
         resultImage.style.display = "none";
-        // document.getElementById("battleResultHeading").textContent += " (No image available)";
     };
 
-    // Show the modal
     const resultModal = new bootstrap.Modal(document.getElementById("battleResultModal"));
     resultModal.show();
 });
@@ -298,7 +288,6 @@ function updateFighterImage(fighter) {
     }
 }
 
-// Randomly select a fighter, stage, weather, and artifact on page load
 function randomizeSelections() {
     const randomFighter1 = getRandomElement(entities);
     let randomFighter2;
@@ -864,6 +853,46 @@ const elementSynergies = {
     "cosmos": ["chaos"]
 };
 
+const entityTypeBonuses = {
+    "god": { 
+        "advantages": { "creature": 50, "hero": 40, "immortal": 30},
+        "elementalMultiplier": 0.3
+    },
+    "goddess": { 
+        "advantages": { "creature": 50, "hero": 40, "immortal": 30},
+        "elementalMultiplier": 0.3
+    },
+    "titan": { 
+        "advantages": { "god": 15, "hero": 35, "immortal": 30, "creature": 60 },
+        "elementalMultiplier": 0.25
+    },
+    "titaness": { 
+        "advantages": { "god": 15, "hero": 35, "immortal": 30, "creature": 60 },
+        "elementalMultiplier": 0.25
+    },
+    "hero": { 
+        "advantages": { "creature": 30, "immortal": 20, "titan": 0 },
+        "elementalMultiplier": 0.2
+    },
+    "immortal": { 
+        "advantages": { "creature": 10 },
+        "elementalMultiplier": 0.2
+    },
+    "primordial": { 
+        "advantages": { "god": 50, "goddess": 50, "titan": 40, "immortal": 35, "hero": 60, "creature": 70 },
+        "elementalMultiplier": 0.4
+    },
+    "cosmic entity": { 
+        "advantages": { "god": 50, "goddess": 50, "titan": 40, "immortal": 35, "hero": 60, "creature": 70 },
+        "elementalMultiplier": 0.4
+    },
+    "creature": { 
+        "advantages": { "hero": 10 },
+        "elementalMultiplier": 0.1
+    }
+};
+
+
 function updateFighterStats(fighterId, fighterData) {
     document.getElementById(`${fighterId}-strength`).textContent = fighterData.strength;
     document.getElementById(`${fighterId}-stamina`).textContent = fighterData.stamina;
@@ -977,43 +1006,22 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
         });
     }
 
-    // God vs. Creature 30% Bonus
-    if ((fighter.type === "god" || fighter.type === "goddess") && opponent && opponent.type === "creature") {
-        score += 50
-        details.push(`God vs Creature Bonus: +50`);
-        let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
-
-        if (overlappingElements.length > 0) {
-            let godBonus = score * 0.3;
-            score += Math.round(godBonus);
-            details.push(`God Elemental Bonus: +${Math.round(godBonus)} (due to shared elements: ${overlappingElements.join(", ")})`);
-            narrative.push(`${fighter.name}, being a divine entity, gained an upper hand over ${opponent.name} due to their overlapping elemental affinity.`);
-        }
-    }
-
-    // Hero/Immortal vs. Creature 15% Bonus
-    if ((fighter.type === "hero" || opponent.type === "immortal") && opponent && opponent.type === "creature") {
-        let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
-        score += 10
-        details.push(`Hero vs Creature Bonus: +10`);
-        if (overlappingElements.length > 0) {
-            let heroBonus = score * 0.15;
-            score += Math.round(heroBonus);
-            details.push(`Hero Elemental Bonus: +${Math.round(heroBonus)} (due to shared elements: ${overlappingElements.join(", ")})`);
-            narrative.push(`${fighter.name}, as a legendary hero, leveraged their experience to gain an advantage over ${opponent.name}.`);
-        }
-    }
-
-    // God vs. Hero 20% Bonus
-    if ((fighter.type === "god" || fighter.type === "goddess") && opponent && (opponent.type === "hero" || opponent.type === "immortal")) {
-        let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
-        score += 10
-        details.push(`God vs Hero Bonus: +10`);
-        if (overlappingElements.length > 0) {
-            let godHeroBonus = score * 0.2;
-            score += Math.round(godHeroBonus);
-            details.push(`God Elemental Bonus (vs. Hero): +${Math.round(godHeroBonus)} (due to shared elements: ${overlappingElements.join(", ")})`);
-            narrative.push(`${fighter.name}, being a god, asserted dominance over ${opponent.name} due to their divine nature.`);
+    if (entityTypeBonuses[fighter.type] && opponent) {
+        let typeBonuses = entityTypeBonuses[fighter.type].advantages;
+    
+        if (typeBonuses[opponent.type]) {
+            let baseBonus = typeBonuses[opponent.type];
+            score += baseBonus;
+            details.push(`${fighter.type} vs ${opponent.type} Bonus: +${baseBonus}`);
+            
+            let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
+    
+            if (overlappingElements.length > 0) {
+                let elementBonus = score * entityTypeBonuses[fighter.type].elementalMultiplier;
+                score += Math.round(elementBonus);
+                details.push(`Elemental Overlap Bonus: +${Math.round(elementBonus)} (Shared Elements: ${overlappingElements.join(", ")})`);
+                narrative.push(`${fighter.name} leveraged their elemental affinity to overpower ${opponent.name}.`);
+            }
         }
     }
 
@@ -1114,9 +1122,23 @@ function logUndefinedArtifacts(entities) {
     }
 }
 
+function logAllUniqueEntityTypes(entities) {
+    let uniqueTypes = new Set();
+
+    entities.forEach(entity => {
+        if (entity.type) {
+            uniqueTypes.add(entity.type);
+        }
+    });
+
+    console.log("=== Unique Entity Types in the Game ===");
+    console.log(Array.from(uniqueTypes).sort().join(", "));
+}
+
 // logAllUniqueElements(entities);
-// logAllUniqueArtifacts(entities)
-logUndefinedArtifacts(entities)
+// logAllUniqueArtifacts(entities);
+// logUndefinedArtifacts(entities);
+// logAllUniqueEntityTypes(entities);
 
 ////////////////////////////////////////////
 ////////////////////////////////////////////
