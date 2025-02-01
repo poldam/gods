@@ -22,7 +22,7 @@ body {
 }
 
 .modal-title {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 select {
@@ -87,5 +87,9 @@ select {
   margin: 2px;
   font-size: 18px;
   color: #333;
+}
+
+#fighter2Bio, #fighter1Bio {
+  text-align: justify;
 }
 

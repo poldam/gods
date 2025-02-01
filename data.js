@@ -3661,7 +3661,7 @@ const entities = [
   },
   {
     "name": "Tiamat",
-    "type": "goddess",
+    "type": "primordial",
     "stats": {
       "strength": 100,
       "stamina": 100,

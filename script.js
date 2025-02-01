@@ -159,7 +159,7 @@ document.getElementById("fightButton").addEventListener("click", () => {
         fightOutcome = `The fight between ${fighter1.name} and ${fighter2.name} ends in a draw, with both scoring ${score1}.`;
     }
 
-    battleResultModalLabel.innerHTML = `${weather} ${stage} battle results`;
+    battleResultModalLabel.innerHTML = `<i class="bi bi-cloud-sun"></i> ${weather} <i class="bi bi-signpost-split"></i> ${stage}`;
 
     console.log("\n=== Fight Details ===");
     console.log(`Stage: ${stage}`);
@@ -753,104 +753,367 @@ const stageModifiers = {
         penalty: ["earth", "underworld", "metal"],
         bonusScore: 35, penaltyScore: 15
     },
-    desert: {
-        bonus: ["fire", "sun", "light", "purification", "sunlight", "resurrection", "order", "creation"],
-        penalty: ["water", "ice", "flowers", "nurture"],
-        bonusScore: 25, penaltyScore: 20
+    mountains: {
+        bonus: ["earth", "strategy", "order", "wisdom", "courage", "guardian", "honor"],
+        penalty: ["darkness", "underworld", "chaos"],
+        bonusScore: 25, penaltyScore: 15
     },
     underworld: {
         bonus: ["darkness", "death", "judgment", "underworld", "destruction", "chaos", "rebirth", "vengeance", "madness"],
         penalty: ["light", "divine", "heaven", "purity"],
         bonusScore: 40, penaltyScore: 25
     },
+    desert: {
+        bonus: ["fire", "sun", "light", "purification", "sunlight", "resurrection", "order", "creation"],
+        penalty: ["water", "ice", "flowers", "nurture"],
+        bonusScore: 25, penaltyScore: 20
+    },
     forest: {
         bonus: ["earth", "strategy", "nature", "healing", "life", "flowers", "hidden power", "wisdom"],
         penalty: ["darkness", "destruction", "fire"],
         bonusScore: 25, penaltyScore: 15
     },
-    mountains: {
-        bonus: ["earth", "strategy", "order", "wisdom", "courage", "guardian", "honor"],
-        penalty: ["darkness", "underworld", "chaos"],
-        bonusScore: 25, penaltyScore: 15
+    volcano: {
+        bonus: ["fire", "lava", "destruction", "brutality", "forge", "war", "bloodshed"],
+        penalty: ["water", "ice", "wind", "nature"],
+        bonusScore: 35, penaltyScore: 20
     },
+    "ocean depths": {
+        bonus: ["water", "sea", "ocean", "darkness", "monstrosity", "nightmare"],
+        penalty: ["fire", "light", "sunlight", "earth"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "storm realm": {
+        bonus: ["thunder", "storm", "lightning", "chaos", "wind", "destruction"],
+        penalty: ["earth", "metal", "balance", "law"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "heavenly realm": {
+        bonus: ["light", "divine", "heaven", "celestial", "justice", "order", "purity", "resurrection"],
+        penalty: ["darkness", "underworld", "trickery"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "celestial fields": {
+        bonus: ["celestial", "heaven", "fortune", "wisdom", "sunlight", "divine knowledge"],
+        penalty: ["darkness", "chaos", "curse"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "sunlit plains": {
+        bonus: ["sun", "light", "fortune", "law", "prosperity", "purification"],
+        penalty: ["darkness", "underworld", "moon"],
+        bonusScore: 30, penaltyScore: 15
+    },
+    "eternal night": {
+        bonus: ["darkness", "night", "moon", "curse", "nightmare", "illusion"],
+        penalty: ["light", "sun", "divine"],
+        bonusScore: 40, penaltyScore: 20
+    },
+    "twilight abyss": {
+        bonus: ["darkness", "twilight", "shapeshifting", "trickery", "death"],
+        penalty: ["order", "light", "heaven"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "cosmic void": {
+        bonus: ["cosmic energy", "chaos", "void", "destruction", "immortality"],
+        penalty: ["law", "order", "earth"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "astral plane": {
+        bonus: ["astral", "wisdom", "divinity", "transmutation", "meditation"],
+        penalty: ["brutality", "bloodshed", "chaos"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "shadow realm": {
+        bonus: ["darkness", "shadow", "death", "illusion", "madness", "vengeance"],
+        penalty: ["light", "wisdom", "law"],
+        bonusScore: 40, penaltyScore: 20
+    },
+    "labyrinth": {
+        bonus: ["strategy", "trickery", "hidden power", "petrification"],
+        penalty: ["law", "wisdom", "order"],
+        bonusScore: 30, penaltyScore: 15
+    },
+    "necropolis": {
+        bonus: ["underworld", "death", "judgment"],
+        penalty: ["light", "resurrection", "order"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "river of souls": {
+        bonus: ["underworld", "death", "judgment", "spirit"],
+        penalty: ["light", "resurrection", "order"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "mirror dimension": {
+        bonus: ["illusion", "shapeshifting", "trickery"],
+        penalty: ["law", "balance", "justice"],
+        bonusScore: 40, penaltyScore: 20
+    },
+    "void rift": {
+        bonus: ["void", "chaos", "cosmic energy"],
+        penalty: ["earth", "law", "order"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "giant’s domain": {
+        bonus: ["strength", "endurance", "earth", "destruction"],
+        penalty: ["wisdom", "strategy", "light"],
+        bonusScore: 45, penaltyScore: 25
+    },
+    "beast’s hunting ground": {
+        bonus: ["monstrosity", "brutality", "strategy", "hunter"],
+        penalty: ["wisdom", "law", "divine"],
+        bonusScore: 40, penaltyScore: 20
+    },
+    "dragon’s lair": {
+        bonus: ["dragon", "fire", "wisdom", "wealth"],
+        penalty: ["cold", "destruction", "order"],
+        bonusScore: 45, penaltyScore: 25
+    },
+    "endless dunes": {
+        bonus: ["desert", "fire", "sunlight", "heat"],
+        penalty: ["water", "ice", "fertility"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "stormy peaks": {
+        bonus: ["thunder", "wind", "air", "storm"],
+        penalty: ["earth", "metal", "law"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "mystic temple": {
+        bonus: ["wisdom", "divine knowledge", "meditation"],
+        penalty: ["brutality", "chaos", "violence"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "haunted battlefield": {
+        bonus: ["war", "battle", "brutality", "vengeance", "bloodshed"],
+        penalty: ["peace", "wisdom", "prosperity"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "forgotten ruins": {
+        bonus: ["hidden power", "wisdom", "memory", "strategy"],
+        penalty: ["law", "justice", "balance"],
+        bonusScore: 30, penaltyScore: 15
+    },
+    "cursed temple": {
+        bonus: ["curse", "darkness", "death", "nightmare"],
+        penalty: ["light", "divine", "order"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "island of the lost": {
+        bonus: ["trickery", "adventure", "fishing", "monkey"],
+        penalty: ["law", "wisdom", "order"],
+        bonusScore: 30, penaltyScore: 15
+    },
+    "battlefield of eternity": {
+        bonus: ["war", "valor", "battle", "strength"],
+        penalty: ["peace", "wisdom", "balance"],
+        bonusScore: 45, penaltyScore: 25
+    }
 };
 
 // Weather Modifiers
 const weatherModifiers = {
     sunny: {
-        bonus: ["light", "sun", "sunlight", "fire", "prosperity", "life", "blessings", "creation", "purification", "festival"],
-        penalty: ["darkness", "underworld", "storm", "ice"],
+        bonus: ["light", "sun", "prosperity", "warmth", "fire", "purification"],
+        penalty: ["darkness", "ice", "storm"],
         bonusScore: 20, penaltyScore: 10
     },
     rainy: {
-        bonus: ["water", "thunder", "storm", "fishing", "sea", "nature", "renewal", "rebirth"],
-        penalty: ["fire", "light", "metal", "desert"],
+        bonus: ["water", "thunder", "life", "fishing", "travel"],
+        penalty: ["fire", "earth", "metal"],
         bonusScore: 30, penaltyScore: 20
     },
     snowy: {
-        bonus: ["ice", "winter", "fortitude", "preservation", "resilience"],
-        penalty: ["fire", "sun", "light", "healing"],
+        bonus: ["ice", "winter", "resilience", "courage"],
+        penalty: ["fire", "desert", "heat"],
         bonusScore: 25, penaltyScore: 15
     },
     windy: {
-        bonus: ["air", "wind", "storm", "travel", "ninjutsu", "adventure", "freedom"],
-        penalty: ["earth", "desert", "metal", "stability"],
+        bonus: ["air", "travel", "strategy", "freedom"],
+        penalty: ["earth", "metal"],
         bonusScore: 20, penaltyScore: 10
     },
     stormy: {
-        bonus: ["thunder", "darkness", "chaos", "destruction", "vengeance", "trickery"],
-        penalty: ["light", "balance", "harmony"],
+        bonus: ["thunder", "darkness", "destruction", "chaos"],
+        penalty: ["light", "stability", "peace"],
         bonusScore: 30, penaltyScore: 20
     },
     foggy: {
-        bonus: ["darkness", "sneakiness", "illusion", "trickery", "hidden power", "ninjutsu"],
-        penalty: ["light", "wisdom", "divine knowledge"],
+        bonus: ["darkness", "sneakiness", "illusion", "trickery"],
+        penalty: ["light", "judgment", "clarity"],
         bonusScore: 15, penaltyScore: 10
     },
     eclipse: {
-        bonus: ["darkness", "sun", "cosmic balance", "judgment", "immortality"],
-        penalty: [],
-        bonusScore: 35, penaltyScore: 0
+        bonus: ["darkness", "moon", "shapeshifting", "chaos"],
+        penalty: ["sun", "light", "fortune"],
+        bonusScore: 35, penaltyScore: 10
     },
+    thunderstorm: {
+        bonus: ["thunder", "storm", "chaos", "destruction"],
+        penalty: ["earth", "balance", "order"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    hailstorm: {
+        bonus: ["ice", "fortitude", "endurance", "resilience"],
+        penalty: ["fire", "nature"],
+        bonusScore: 30, penaltyScore: 20
+    },
+    sandstorm: {
+        bonus: ["desert", "earth", "strategy", "endurance"],
+        penalty: ["water", "light", "air"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    blizzard: {
+        bonus: ["ice", "winter", "cold", "darkness", "warrior"],
+        penalty: ["fire", "heat", "resilience"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    "acid rain": {
+        bonus: ["poison", "curse", "darkness", "chaos"],
+        penalty: ["life", "purification", "light"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "volcanic ash": {
+        bonus: ["fire", "destruction", "brutality", "chaos"],
+        penalty: ["wind", "air", "nature"],
+        bonusScore: 45, penaltyScore: 25
+    },
+    "blood moon": {
+        bonus: ["darkness", "night", "vengeance", "madness"],
+        penalty: ["sun", "purification", "wisdom"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    "aurora": {
+        bonus: ["light", "divine", "wisdom", "fortune"],
+        penalty: ["darkness", "chaos"],
+        bonusScore: 40, penaltyScore: 25
+    },
+    darkness: {
+        bonus: ["darkness", "underworld", "nightmare", "illusion"],
+        penalty: ["light", "divine", "judgment"],
+        bonusScore: 45, penaltyScore: 25
+    },
+    "mystic fog": {
+        bonus: ["mystic", "illusion", "hidden power", "trickery"],
+        penalty: ["light", "divinity", "law"],
+        bonusScore: 35, penaltyScore: 20
+    },
+    "solar flare": {
+        bonus: ["sun", "fire", "celestial", "purification"],
+        penalty: ["darkness", "water", "ice"],
+        bonusScore: 50, penaltyScore: 30
+    },
+    tornado: {
+        bonus: ["wind", "storm", "chaos", "strategy"],
+        penalty: ["earth", "stability", "balance"],
+        bonusScore: 45, penaltyScore: 25
+    }
 };
 
 const elementSynergies = {
-    "water": ["fire"],
-    "light": ["darkness"],
-    "earth": ["air"],
-    "fire": ["ice", "nature"],
-    "lightning": ["metal"],
-    "wisdom": ["madness"],
-    "heroism": ["fear"],
-    "strategy": ["brutality"],
-    "divine": ["underworld"],
-    "creation": ["destruction"],
-    "healing": ["poison"],
-    "judgment": ["chaos"],
-    "guardian": ["trickery"],
-    "storm": ["sea"],
-    "strength": ["finesse"],
-    "fate": ["rebellion"],
-    "courage": ["fear"],
-    "illusion": ["purification"],
-    "alchemy": ["transmutation"],
-    "valor": ["cowardice"],
-    "love": ["vengeance"],
-    "time": ["resurrection"],
-    "archery": ["warrior"],
-    "fortune": ["misfortune"],
-    "heaven": ["underworld"],
-    "celestial": ["cosmic balance"],
-    "justice": ["lawlessness"],
-    "leadership": ["rebellion"],
-    "music": ["silence"],
-    "meditation": ["madness"],
-    "metal": ["nature"],
-    "monkey": ["order"],
-    "samurai": ["ninjutsu"],
-    "spirit": ["materialism"],
-    "prosperity": ["poverty"],
-    "cosmos": ["chaos"]
+    "water": ["fire", "desert"],
+    "light": ["darkness", "curse"],
+    "earth": ["air", "storm"],
+    "fire": ["ice", "nature", "sea"],
+    "lightning": ["metal", "water"],
+    "wisdom": ["madness", "chaos"],
+    "heroism": ["fear", "cowardice"],
+    "strategy": ["brutality", "recklessness"],
+    "divine": ["underworld", "curse"],
+    "creation": ["destruction", "entropy"],
+    "healing": ["poison", "plague"],
+    "judgment": ["chaos", "lawlessness"],
+    "guardian": ["trickery", "betrayal"],
+    "storm": ["sea", "earth"],
+    "strength": ["finesse", "stealth"],
+    "fate": ["rebellion", "free will"],
+    "courage": ["fear", "cowardice"],
+    "illusion": ["purification", "truth"],
+    "alchemy": ["transmutation", "disease"],
+    "valor": ["cowardice", "deception"],
+    "love": ["vengeance", "hatred"],
+    "time": ["resurrection", "mortality"],
+    "archery": ["warrior", "swordplay"],
+    "fortune": ["misfortune", "poverty"],
+    "heaven": ["underworld", "chaos"],
+    "celestial": ["cosmic balance", "void"],
+    "justice": ["lawlessness", "anarchy"],
+    "leadership": ["rebellion", "tyranny"],
+    "music": ["silence", "discord"],
+    "meditation": ["madness", "restlessness"],
+    "metal": ["nature", "earth"],
+    "monkey": ["order", "trickery"],
+    "samurai": ["ninjutsu", "warrior"],
+    "spirit": ["materialism", "emptiness"],
+    "prosperity": ["poverty", "misfortune"],
+    "cosmos": ["chaos", "void"],
+    "adventure": ["order", "safety"],
+    "balance": ["extremes", "chaos"],
+    "battle": ["peace", "diplomacy"],
+    "beauty": ["ugliness", "corruption"],
+    "blessings": ["curses", "misfortune"],
+    "blood": ["purity", "healing"],
+    "bloodshed": ["peace", "mercy"],
+    "brutality": ["mercy", "finesse"],
+    "cannibalism": ["civilization", "order"],
+    "cosmic energy": ["void", "chaos"],
+    "devotion": ["doubt", "betrayal"],
+    "dharma": ["chaos", "lawlessness"],
+    "disease": ["healing", "purification"],
+    "divine knowledge": ["ignorance", "deception"],
+    "dragon": ["warrior", "honor"],
+    "endurance": ["frailty", "exhaustion"],
+    "fertility": ["destruction", "barrenness"],
+    "festivity": ["sorrow", "mourning"],
+    "fishing": ["drought", "scarcity"],
+    "flowers": ["decay", "death"],
+    "forge": ["destruction", "entropy"],
+    "honor": ["deception", "cowardice"],
+    "immortality": ["mortality", "entropy"],
+    "intellect": ["ignorance", "madness"],
+    "knowledge": ["ignorance", "illusion"],
+    "labyrinth": ["order", "law"],
+    "law": ["anarchy", "lawlessness"],
+    "life": ["death", "decay"],
+    "lotus": ["pollution", "corruption"],
+    "luck": ["misfortune", "poverty"],
+    "magic": ["technology", "logic"],
+    "memory": ["forgetfulness", "oblivion"],
+    "monstrosity": ["humanity", "compassion"],
+    "moon": ["sun", "light"],
+    "motherhood": ["abandonment", "neglect"],
+    "nature": ["metal", "destruction"],
+    "night": ["sunlight", "fire"],
+    "nightmare": ["hope", "light"],
+    "nurture": ["neglect", "destruction"],
+    "peach": ["poison", "corruption"],
+    "pegasus": ["gravity", "earth"],
+    "petrification": ["life", "freedom"],
+    "plague": ["health", "medicine"],
+    "preservation": ["entropy", "chaos"],
+    "prophecy": ["free will", "chaos"],
+    "protection": ["destruction", "weakness"],
+    "purity": ["corruption", "darkness"],
+    "removal of obstacles": ["chaos", "trickery"],
+    "resurrection": ["finality", "time"],
+    "shapeshifting": ["identity", "truth"],
+    "sky": ["earth", "underworld"],
+    "spirit": ["materialism", "emptiness"],
+    "sun": ["darkness", "moon"],
+    "thunder": ["silence", "harmony"],
+    "toads": ["serpents", "plague"],
+    "transmutation": ["stagnation", "permanence"],
+    "travel": ["stagnation", "imprisonment"],
+    "trickery": ["truth", "justice"],
+    "valor": ["cowardice", "deception"],
+    "vengeance": ["mercy", "forgiveness"],
+    "venom": ["healing", "purification"],
+    "victory": ["defeat", "humility"],
+    "war": ["peace", "harmony"],
+    "wealth": ["poverty", "misfortune"],
+    "wind": ["stagnation", "heaviness"],
+    "wine": ["sobriety", "control"],
+    "winter": ["heat", "fire"],
+    "wisdom": ["ignorance", "deception"]
 };
 
 const entityTypeBonuses = {
@@ -892,6 +1155,13 @@ const entityTypeBonuses = {
     }
 };
 
+const corruptionBoosts = {
+    strength: 1.2, magicPower: 1.25, intimidation: 1.3, sneakiness: 1.15,
+};
+
+const corruptionPenalties = {
+    healing: 0.75, influence: 0.7, resilience: 0.8, agility: 0.85,
+};
 
 function updateFighterStats(fighterId, fighterData) {
     document.getElementById(`${fighterId}-strength`).textContent = fighterData.strength;
@@ -922,7 +1192,7 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
         for (let stat in bonuses) {
             if (fighter.stats[stat] !== undefined) {
                 let actualbonus = Math.round((fighter.stats[stat] * bonuses[stat]) / 100, 2);
-                fighter.stats[stat] += fighter.stats[stat] * bonuses[stat] / 100;
+                fighter.stats[stat] += actualbonus;
                 details.push(`Artifact Bonus (${selectedArtifact}): +${actualbonus} (+${bonuses[stat]}%) to ${stat}`);
             }
         }
@@ -931,7 +1201,7 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
     for (let stat in fighter.stats) {
         const statContribution = fighter.stats[stat] * (statWeights[stat] || 0);
         score += statContribution;
-        details.push(`${stat}: ${fighter.stats[stat]} × ${statWeights[stat]} = ${statContribution.toFixed(2)}`);
+        // details.push(`${stat}: ${fighter.stats[stat]} × ${statWeights[stat]} = ${statContribution.toFixed(2)}`);
         // narrative.push(`Using their ${stat}, ${fighter.name} demonstrated impressive ${stat.toLowerCase()} in the battle.`);
     }
 
@@ -954,19 +1224,10 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
         const egyptianBonus = 15;
         score += egyptianBonus;
         details.push(`Desert bonus for Egyptian entities (+${egyptianBonus})`);
-
     }
 
     // Corruption Mechanics
     if (isCorrupted) {
-        let corruptionBoosts = {
-            strength: 1.2, magicPower: 1.25, intimidation: 1.3, sneakiness: 1.15,
-        };
-
-        let corruptionPenalties = {
-            healing: 0.75, influence: 0.7, resilience: 0.8, agility: 0.85,
-        };
-
         for (let stat in fighter.stats) {
             if (corruptionBoosts[stat]) {
                 let increase = fighter.stats[stat] * (corruptionBoosts[stat] - 1);
