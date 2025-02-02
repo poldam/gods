@@ -4402,197 +4402,197 @@ const entities = [
       "powers": "Manipulation of celestial light, immense solar energy projection, and the ability to create and destroy radiance.",
       "influence": "One of the elder Titans, he shaped the cosmic order and brought the first light to the world, his legacy carried through his children, Helios, Selene, and Eos."
     }
-},
-{
-  "name": "Coeus",
-  "type": "titan",
-  "stats": {
-    "strength": 80,
-    "stamina": 85,
-    "speed": 70,
-    "healing": 75,
-    "influence": 100,
-    "sneakiness": 50,
-    "agility": 70,
-    "defense": 85,
-    "magicPower": 95,
-    "criticalHitChance": 20,
-    "resilience": 90,
-    "intimidation": 85,
-    "adaptability": 95,
-    "elementalResistance": 90
   },
-  "elements": ["cosmic energy", "wisdom", "divine knowledge"],
-  "artifacts": ["Tablet of Destinies", "Celestial Scroll"],
-  "image": "./images/coeus.webp",
-  "corruptimage": "./images/coeus2.webp",
-  "code": "coeus",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Titan of intellect, the axis of the heavens, and guardian of celestial knowledge.",
-    "powers": "Unparalleled wisdom, the ability to perceive the secrets of the cosmos, and divine foresight.",
-    "influence": "One of the primordial Titans, Coeus was revered as the source of prophecy and cosmic intelligence, shaping the order of the universe before the Olympians."
-  }
-},
-{
-  "name": "Iapetus",
-  "type": "titan",
-  "stats": {
-    "strength": 95,
-    "stamina": 85,
-    "speed": 75,
-    "healing": 60,
-    "influence": 85,
-    "sneakiness": 50,
-    "agility": 80,
-    "defense": 95,
-    "magicPower": 75,
-    "criticalHitChance": 30,
-    "resilience": 90,
-    "intimidation": 85,
-    "adaptability": 85,
-    "elementalResistance": 80
+  {
+    "name": "Coeus",
+    "type": "titan",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 70,
+      "healing": 75,
+      "influence": 100,
+      "sneakiness": 50,
+      "agility": 70,
+      "defense": 85,
+      "magicPower": 95,
+      "criticalHitChance": 20,
+      "resilience": 90,
+      "intimidation": 85,
+      "adaptability": 95,
+      "elementalResistance": 90
+    },
+    "elements": ["cosmic energy", "wisdom", "divine knowledge"],
+    "artifacts": ["Tablet of Destinies", "Celestial Scroll"],
+    "image": "./images/coeus.webp",
+    "corruptimage": "./images/coeus2.webp",
+    "code": "coeus",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Titan of intellect, the axis of the heavens, and guardian of celestial knowledge.",
+      "powers": "Unparalleled wisdom, the ability to perceive the secrets of the cosmos, and divine foresight.",
+      "influence": "One of the primordial Titans, Coeus was revered as the source of prophecy and cosmic intelligence, shaping the order of the universe before the Olympians."
+    }
   },
-  "elements": ["war", "fate", "mortality"],
-  "artifacts": ["Chains of Judgment", "Spear of Destiny"],
-  "image": "./images/iapetus.webp",
-  "corruptimage": "./images/iapetus2.webp",
-  "code": "iapetus",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Titan of mortality, the wielder of fate, and the father of Prometheus.",
-    "powers": "Unyielding strength, the ability to impose mortality upon beings, and divine warfare tactics.",
-    "influence": "A fearsome warrior among the Titans, Iapetus shaped the concept of mortality, passing it onto his children, including the cunning Prometheus, who gifted fire to humanity."
-  }
-},
-{
-  "name": "Themis",
-  "type": "titaness",
-  "stats": {
-    "strength": 80,
-    "stamina": 85,
-    "speed": 70,
-    "healing": 90,
-    "influence": 100,
-    "sneakiness": 30,
-    "agility": 75,
-    "defense": 90,
-    "magicPower": 95,
-    "criticalHitChance": 20,
-    "resilience": 85,
-    "intimidation": 80,
-    "adaptability": 90,
-    "elementalResistance": 95
+  {
+    "name": "Iapetus",
+    "type": "titan",
+    "stats": {
+      "strength": 95,
+      "stamina": 85,
+      "speed": 75,
+      "healing": 60,
+      "influence": 85,
+      "sneakiness": 50,
+      "agility": 80,
+      "defense": 95,
+      "magicPower": 75,
+      "criticalHitChance": 30,
+      "resilience": 90,
+      "intimidation": 85,
+      "adaptability": 85,
+      "elementalResistance": 80
+    },
+    "elements": ["war", "fate", "mortality"],
+    "artifacts": ["Chains of Judgment", "Spear of Destiny"],
+    "image": "./images/iapetus.webp",
+    "corruptimage": "./images/iapetus2.webp",
+    "code": "iapetus",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Titan of mortality, the wielder of fate, and the father of Prometheus.",
+      "powers": "Unyielding strength, the ability to impose mortality upon beings, and divine warfare tactics.",
+      "influence": "A fearsome warrior among the Titans, Iapetus shaped the concept of mortality, passing it onto his children, including the cunning Prometheus, who gifted fire to humanity."
+    }
   },
-  "elements": ["justice", "divine knowledge", "law"],
-  "artifacts": ["Scales of Fate", "Sword of Judgment"],
-  "image": "./images/themis.webp",
-  "corruptimage": "./images/themis2.webp",
-  "code": "themis",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Titaness of divine law, cosmic order, and prophecy, guardian of justice.",
-    "powers": "Absolute judgment, divine insight into fate, and the ability to maintain balance within the cosmos.",
-    "influence": "A primordial force of law and order, Themis was revered as the enforcer of the natural and divine laws that governed both gods and mortals."
-  }
-},
-{
-  "name": "Mnemosyne",
-  "type": "titaness",
-  "stats": {
-    "strength": 75,
-    "stamina": 85,
-    "speed": 65,
-    "healing": 90,
-    "influence": 100,
-    "sneakiness": 40,
-    "agility": 70,
-    "defense": 85,
-    "magicPower": 100,
-    "criticalHitChance": 20,
-    "resilience": 85,
-    "intimidation": 75,
-    "adaptability": 95,
-    "elementalResistance": 90
+  {
+    "name": "Themis",
+    "type": "titaness",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 70,
+      "healing": 90,
+      "influence": 100,
+      "sneakiness": 30,
+      "agility": 75,
+      "defense": 90,
+      "magicPower": 95,
+      "criticalHitChance": 20,
+      "resilience": 85,
+      "intimidation": 80,
+      "adaptability": 90,
+      "elementalResistance": 95
+    },
+    "elements": ["justice", "divine knowledge", "law"],
+    "artifacts": ["Scales of Fate", "Sword of Judgment"],
+    "image": "./images/themis.webp",
+    "corruptimage": "./images/themis2.webp",
+    "code": "themis",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Titaness of divine law, cosmic order, and prophecy, guardian of justice.",
+      "powers": "Absolute judgment, divine insight into fate, and the ability to maintain balance within the cosmos.",
+      "influence": "A primordial force of law and order, Themis was revered as the enforcer of the natural and divine laws that governed both gods and mortals."
+    }
   },
-  "elements": ["divine knowledge", "wisdom", "memory"],
-  "artifacts": ["Scroll of Eternal Knowledge", "Celestial Archive"],
-  "image": "./images/mnemosyne.webp",
-  "corruptimage": "./images/mnemosyne2.webp",
-  "code": "mnemosyne",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Titaness of memory, divine wisdom, and mother of the Muses.",
-    "powers": "Unfailing recollection of all knowledge, the ability to grant or remove memories, and the power to inspire creativity and wisdom.",
-    "influence": "A pillar of knowledge and inspiration, Mnemosyne is revered as the source of all artistic, literary, and historical records, ensuring that the past is never forgotten."
-  }
-},
-{
-  "name": "Atlas",
-  "type": "titan",
-  "stats": {
-    "strength": 100,
-    "stamina": 100,
-    "speed": 60,
-    "healing": 70,
-    "influence": 80,
-    "sneakiness": 30,
-    "agility": 65,
-    "defense": 95,
-    "magicPower": 50,
-    "criticalHitChance": 15,
-    "resilience": 100,
-    "intimidation": 85,
-    "adaptability": 80,
-    "elementalResistance": 85
+  {
+    "name": "Mnemosyne",
+    "type": "titaness",
+    "stats": {
+      "strength": 75,
+      "stamina": 85,
+      "speed": 65,
+      "healing": 90,
+      "influence": 100,
+      "sneakiness": 40,
+      "agility": 70,
+      "defense": 85,
+      "magicPower": 100,
+      "criticalHitChance": 20,
+      "resilience": 85,
+      "intimidation": 75,
+      "adaptability": 95,
+      "elementalResistance": 90
+    },
+    "elements": ["divine knowledge", "wisdom", "memory"],
+    "artifacts": ["Scroll of Eternal Knowledge", "Celestial Archive"],
+    "image": "./images/mnemosyne.webp",
+    "corruptimage": "./images/mnemosyne2.webp",
+    "code": "mnemosyne",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Titaness of memory, divine wisdom, and mother of the Muses.",
+      "powers": "Unfailing recollection of all knowledge, the ability to grant or remove memories, and the power to inspire creativity and wisdom.",
+      "influence": "A pillar of knowledge and inspiration, Mnemosyne is revered as the source of all artistic, literary, and historical records, ensuring that the past is never forgotten."
+    }
   },
-  "elements": ["earth", "cosmos", "endurance"],
-  "artifacts": ["Celestial Sphere", "Titan’s Shackles"],
-  "image": "./images/atlas.webp",
-  "corruptimage": "./images/atlas2.webp",
-  "code": "atlas",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Titan of endurance, condemned to hold up the heavens for eternity.",
-    "powers": "Unmatched strength and stamina, the ability to withstand any burden, and control over celestial forces.",
-    "influence": "A symbol of eternal endurance, Atlas was feared and respected for his role in upholding cosmic balance, ensuring the heavens remained in place."
-  }
-},
-{
-  "name": "Echidna",
-  "type": "creature",
-  "stats": {
-    "strength": 90,
-    "stamina": 95,
-    "speed": 75,
-    "healing": 80,
-    "influence": 85,
-    "sneakiness": 70,
-    "agility": 85,
-    "defense": 90,
-    "magicPower": 95,
-    "criticalHitChance": 30,
-    "resilience": 95,
-    "intimidation": 100,
-    "adaptability": 85,
-    "elementalResistance": 90
+  {
+    "name": "Atlas",
+    "type": "titan",
+    "stats": {
+      "strength": 100,
+      "stamina": 100,
+      "speed": 60,
+      "healing": 70,
+      "influence": 80,
+      "sneakiness": 30,
+      "agility": 65,
+      "defense": 95,
+      "magicPower": 50,
+      "criticalHitChance": 15,
+      "resilience": 100,
+      "intimidation": 85,
+      "adaptability": 80,
+      "elementalResistance": 85
+    },
+    "elements": ["earth", "cosmos", "endurance"],
+    "artifacts": ["Celestial Sphere", "Titan’s Shackles"],
+    "image": "./images/atlas.webp",
+    "corruptimage": "./images/atlas2.webp",
+    "code": "atlas",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Titan of endurance, condemned to hold up the heavens for eternity.",
+      "powers": "Unmatched strength and stamina, the ability to withstand any burden, and control over celestial forces.",
+      "influence": "A symbol of eternal endurance, Atlas was feared and respected for his role in upholding cosmic balance, ensuring the heavens remained in place."
+    }
   },
-  "elements": ["chaos", "darkness", "earth", "monstrosity"],
-  "artifacts": ["Crown of the Abyss", "Venomous Fangs"],
-  "image": "./images/echidna.webp",
-  "corruptimage": "./images/echidna2.webp",
-  "code": "echidna",
-  "bio": {
-    "nationality": "Greek",
-    "description": "Echidna, the Mother of Monsters, is a half-woman, half-serpent entity feared by gods and mortals alike.",
-    "powers": "Creates monstrous offspring, possesses deadly venom, wields powerful dark magic, and commands chaos.",
-    "influence": "Known as the mother of many legendary beasts like Cerberus, Hydra, and Chimera, her presence embodies primordial terror."
-  }
-},
-{
-  "name": "Phobetor (Icelus)",
-  "type": "primordial",
-  "stats": {
+  {
+    "name": "Echidna",
+    "type": "creature",
+    "stats": {
+      "strength": 90,
+      "stamina": 95,
+      "speed": 75,
+      "healing": 80,
+      "influence": 85,
+      "sneakiness": 70,
+      "agility": 85,
+      "defense": 90,
+      "magicPower": 95,
+      "criticalHitChance": 30,
+      "resilience": 95,
+      "intimidation": 100,
+      "adaptability": 85,
+      "elementalResistance": 90
+    },
+    "elements": ["chaos", "darkness", "earth", "monstrosity"],
+    "artifacts": ["Crown of the Abyss", "Venomous Fangs"],
+    "image": "./images/echidna.webp",
+    "corruptimage": "./images/echidna2.webp",
+    "code": "echidna",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Echidna, the Mother of Monsters, is a half-woman, half-serpent entity feared by gods and mortals alike.",
+      "powers": "Creates monstrous offspring, possesses deadly venom, wields powerful dark magic, and commands chaos.",
+      "influence": "Known as the mother of many legendary beasts like Cerberus, Hydra, and Chimera, her presence embodies primordial terror."
+    }
+  },
+  {
+    "name": "Phobetor (Icelus)",
+    "type": "primordial",
+    "stats": {
       "strength": 70,
       "stamina": 95,
       "speed": 85,
@@ -4607,24 +4607,265 @@ const entities = [
       "intimidation": 100,
       "adaptability": 95,
       "elementalResistance": 95
-  },
-  "elements": ["darkness", "nightmare", "illusion", "fear", "spirit"],
-  "artifacts": ["Crown of the Abyss", "Shadow Cloak", "Petrifying Gaze", "Tablet of Destinies"],
-  "image": "./images/phobetor.webp",
-  "corruptimage": "./images/phobetor2.webp",
-  "code": "phobetor",
-  "bio": {
+    },
+    "elements": ["darkness", "nightmare", "illusion", "fear", "spirit"],
+    "artifacts": ["Crown of the Abyss", "Shadow Cloak", "Petrifying Gaze", "Tablet of Destinies"],
+    "image": "./images/phobetor.webp",
+    "corruptimage": "./images/phobetor2.webp",
+    "code": "phobetor",
+    "bio": {
       "nationality": "Greek",
       "description": "The primordial god of nightmares, Phobetor (Icelus) manifests as a being of pure terror, haunting the dreams of mortals and immortals alike.",
       "powers": "Phobetor can shape nightmares into reality, creating illusions so powerful they break the minds of his victims. He is untouchable by conventional means, existing between the realms of dreams and waking life. His mere presence invokes fear and madness.",
       "influence": "Feared by all beings, from mortals to gods, Phobetor controls the realm of nightmares, ensuring that even the most powerful beings are never free from the grip of terror."
+    }
+  },
+  {
+    "name": "Pangu",
+    "type": "primordial",
+    "stats": {
+      "strength": 100,
+      "stamina": 100,
+      "speed": 60,
+      "healing": 90,
+      "influence": 95,
+      "sneakiness": 30,
+      "agility": 50,
+      "defense": 100,
+      "magicPower": 95,
+      "criticalHitChance": 25,
+      "resilience": 100,
+      "intimidation": 100,
+      "adaptability": 85,
+      "elementalResistance": 100
+    },
+    "elements": ["creation", "cosmos", "earth", "balance"],
+    "artifacts": ["Cosmic Axe of Pangu", "Yin-Yang Orb", "Celestial Scale"],
+    "image": "./images/pangu.webp",
+    "corruptimage": "./images/pangu2.webp",
+    "code": "pangu",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "Pangu is the primordial being who emerged from the cosmic egg and separated heaven from earth. His body formed the mountains, rivers, and sky, and his breath gave life to all beings.",
+      "powers": "He has cosmic-level strength, the power to manipulate creation and destruction, and the ability to reshape reality. His cosmic axe can split dimensions, and his presence embodies universal balance.",
+      "influence": "Revered as the first being and the origin of the universe in Chinese mythology, Pangu represents the foundation of creation and cosmic harmony."
+    }
+  },
+  {
+    "name": "Takeminakata",
+    "type": "god",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 70,
+      "healing": 60,
+      "influence": 80,
+      "sneakiness": 40,
+      "agility": 75,
+      "defense": 90,
+      "magicPower": 50,
+      "criticalHitChance": 30,
+      "resilience": 95,
+      "intimidation": 90,
+      "adaptability": 80,
+      "elementalResistance": 85
+    },
+    "elements": ["war", "battle", "strength", "storm"],
+    "artifacts": ["Sword of Takeminakata", "Storm Bringer Gauntlets", "Sacred Warrior’s Helm"],
+    "image": "./images/takeminakata.webp",
+    "corruptimage": "./images/takeminakata2.webp",
+    "code": "takeminakata",
+    "bio": {
+      "nationality": "Japanese",
+      "description": "Takeminakata is the powerful Japanese god of war, storms, and strength. He was known for his battle prowess and is deeply connected to warriors and military leaders.",
+      "powers": "He wields an immense divine sword capable of summoning storms and increasing his strength tenfold. He has unmatched combat ability and can inspire fear or courage on the battlefield.",
+      "influence": "He is revered as a guardian of warriors and a symbol of unshakable strength in Japanese mythology, often invoked in times of war and conflict."
+    }
+  },
+  {
+    "name": "Ōkuninushi",
+    "type": "god",
+    "stats": {
+      "strength": 70,
+      "stamina": 85,
+      "speed": 65,
+      "healing": 100,
+      "influence": 95,
+      "sneakiness": 50,
+      "agility": 70,
+      "defense": 80,
+      "magicPower": 100,
+      "criticalHitChance": 25,
+      "resilience": 90,
+      "intimidation": 60,
+      "adaptability": 85,
+      "elementalResistance": 90
+    },
+    "elements": ["magic", "healing", "wisdom", "protection"],
+    "artifacts": ["Sacred Ruler’s Staff", "Celestial Tome of Fate", "Spirit Whisperer Amulet"],
+    "image": "./images/okuninushi.webp",
+    "corruptimage": "./images/okuninushi2.webp",
+    "code": "okuninushi",
+    "bio": {
+      "nationality": "Japanese",
+      "description": "Ōkuninushi is the revered god of nation-building, healing, and sorcery. He was once a great ruler and is known for his wisdom, magic, and ability to heal both people and lands.",
+      "powers": "He possesses immense magical knowledge, the ability to reshape reality, and divine healing powers that can restore life and mend broken spirits. His influence extends to spirits and the balance of fate.",
+      "influence": "He is widely worshipped in Japan as the protector of the land and the divine overseer of its prosperity, wisdom, and magic."
+    }
+  },
+  {
+    "name": "Ōyamatsumi",
+    "type": "god",
+    "stats": {
+      "strength": 90,
+      "stamina": 100,
+      "speed": 50,
+      "healing": 85,
+      "influence": 80,
+      "sneakiness": 40,
+      "agility": 60,
+      "defense": 95,
+      "magicPower": 70,
+      "criticalHitChance": 20,
+      "resilience": 100,
+      "intimidation": 85,
+      "adaptability": 80,
+      "elementalResistance": 95
+    },
+    "elements": ["earth", "nature", "war", "protection"],
+    "artifacts": ["Ancient Mountain Staff", "Armor of the Sacred Peaks", "Stone Crown of Dominion"],
+    "image": "./images/oyamatsumi.webp",
+    "corruptimage": "./images/oyamatsumi2.webp",
+    "code": "oyamatsumi",
+    "bio": {
+      "nationality": "Japanese",
+      "description": "Ōyamatsumi is the powerful god of mountains, forests, and war. He rules over nature's resilience and the unyielding spirit of warriors who seek his favor.",
+      "powers": "He commands the mountains, reshapes landscapes at will, and grants warriors unbreakable endurance. His divine presence strengthens all who fight for nature’s balance.",
+      "influence": "As a major god in Japanese mythology, he is revered as both a war deity and the guardian of the land, ensuring prosperity and balance among the elements."
+    }
+  },
+  {
+    "name": "Di Jiang",
+    "type": "primordial",
+    "stats": {
+      "strength": 85,
+      "stamina": 95,
+      "speed": 80,
+      "healing": 70,
+      "influence": 100,
+      "sneakiness": 50,
+      "agility": 90,
+      "defense": 90,
+      "magicPower": 100,
+      "criticalHitChance": 35,
+      "resilience": 95,
+      "intimidation": 100,
+      "adaptability": 90,
+      "elementalResistance": 100
+    },
+    "elements": ["chaos", "space", "time", "cosmos"],
+    "artifacts": ["Void Rift Crown", "Celestial Wings of Annihilation", "Temporal Core of Di Jiang"],
+    "image": "./images/di_jiang.webp",
+    "corruptimage": "./images/di_jiang2.webp",
+    "code": "di_jiang",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "Di Jiang is the primordial entity of chaos, space, and time. He is said to have no face, only a swirling mass of cosmic energy, embodying the boundless chaos of the universe.",
+      "powers": "He can manipulate time, bend space, and summon chaotic void storms. His presence distorts reality itself, creating infinite possibilities and unraveling fate.",
+      "influence": "As a feared yet respected deity, he represents the unpredictable nature of existence, the flow of time, and the cosmic forces that govern reality."
+    }
+  },
+  {
+    "name": "Kuebiko",
+    "type": "spirit",
+    "stats": {
+      "strength": 50,
+      "stamina": 70,
+      "speed": 30,
+      "healing": 85,
+      "influence": 90,
+      "sneakiness": 60,
+      "agility": 60,
+      "defense": 80,
+      "magicPower": 90,
+      "criticalHitChance": 15,
+      "resilience": 80,
+      "intimidation": 60,
+      "adaptability": 90,
+      "elementalResistance": 85
+    },
+    "elements": ["wisdom", "nature", "prophecy"],
+    "artifacts": ["Scroll of Enlightenment", "Ancient Crown"],
+    "image": "./images/kuebiko.webp",
+    "corruptimage": "./images/kuebiko2.webp",
+    "code": "kuebiko",
+    "bio": {
+      "nationality": "Japanese",
+      "description": "A scarecrow deity with unparalleled wisdom and foresight, yet immobile and rooted in place.",
+      "powers": "Omniscient knowledge, wisdom, and prophetic insight.",
+      "influence": "A revered figure in Japanese folklore, embodying boundless wisdom."
+    }
+  },
+  {
+    "name": "Gonggong",
+    "type": "god",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 75,
+      "healing": 55,
+      "influence": 85,
+      "sneakiness": 40,
+      "agility": 70,
+      "defense": 90,
+      "magicPower": 85,
+      "criticalHitChance": 20,
+      "resilience": 95,
+      "intimidation": 100,
+      "adaptability": 65,
+      "elementalResistance": 85
+    },
+    "elements": ["water", "destruction", "chaos"],
+    "artifacts": ["Trident of the Flood", "Crown of the Drowned"],
+    "image": "./images/gonggong.webp",
+    "corruptimage": "./images/gonggong2.webp",
+    "code": "gonggong",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A destructive water deity who caused catastrophic floods in his battle for power.",
+      "powers": "Control over water, manipulation of floods and storms, immense strength.",
+      "influence": "Feared as a chaotic force responsible for the tilting of the heavens."
+    }
+  },
+  {
+    "name": "Fuxi",
+    "type": "god",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 70,
+      "healing": 95,
+      "influence": 100,
+      "sneakiness": 45,
+      "agility": 75,
+      "defense": 90,
+      "magicPower": 100,
+      "criticalHitChance": 15,
+      "resilience": 85,
+      "intimidation": 80,
+      "adaptability": 90,
+      "elementalResistance": 95
+    },
+    "elements": ["wisdom", "creation", "divine knowledge"],
+    "artifacts": ["Jade Tablet of Creation", "Heavenly Compass"],
+    "image": "./images/fuxi.webp",
+    "corruptimage": "./images/fuxi2.webp",
+    "code": "fuxi",
+    "bio": {
+      "nationality": "Chinese",
+      "description": "A god of civilization, wisdom, and divination, credited with creating human culture and the Bagua trigrams.",
+      "powers": "Knowledge of the cosmos, divine wisdom, mastery over fate and civilization.",
+      "influence": "Revered as the first sage-king and one of the most important figures in Chinese mythology."
+    }
   }
-}
-
-
-
-
-
-
-
 ];
