@@ -114,3 +114,21 @@ select {
 #fighter1Bio {
   text-align: justify;
 }
+
+.logo {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  margin-bottom: -114px;
+}
+
+@media screen and (max-width: 999px) {
+  .logo {
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 33px;
+    margin-bottom: -22px;
+    position: relative;
+    left: 40%;
+  }
+}
