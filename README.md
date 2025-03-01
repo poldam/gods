@@ -1,9 +1,14 @@
-# Live Version
-https://www.estros.gr/gods/
+# Mythical Battle Arena
 
-# ⚔️ Combat Scoring System
+## Live Version
+[Click here to play](https://www.estros.gr/gods/)
 
-## 📖 Overview
+## Overview
+**Mythical Battle Arena** is a strategic battle simulation where legendary deities, heroes, titans, and creatures clash in dynamic encounters. Players select fighters, artifacts, battle conditions, and corruption status to determine the victor through a calculated scoring system.
+
+## ⚔️ Combat Scoring System
+
+### 📖 Overview
 The combat system calculates a fighter's **score** based on multiple factors, including **base stats, artifacts, stage effects, weather conditions, corruption, elemental synergies, and opponent type interactions**. This score determines the fighter's **overall effectiveness** in a battle.
 
 ---
@@ -45,7 +50,7 @@ Artifacts provide **percentage-based bonuses** to specific stats.
 
 ### ⚡ **Artifact Bonus Rules**
 - If the fighter **equips an artifact**, it grants **stat bonuses**.
-- If the artifact is **unique to the fighter**, it gives an **extra special bonus** (+25).
+- If the artifact is **unique to the fighter**, it gives an **extra special bonus** (+50).
 
 ### 🔢 **Calculation:**
 fighter.stats[stat] += (fighter.stats[stat] * artifactBonus / 100) score += artifactBonus
@@ -113,23 +118,7 @@ fighter.stats[stat] *= corruptionBoosts[stat] score -= purityPenalty
 
 ---
 
-## ⚖️ 6️⃣ Special Matchup Bonuses
-
-### 🏛️ **God vs Creature (30% Bonus)**
-- Gods gain **+20 bonus** when fighting creatures.
-- If the **God and Creature share elements**, the **God gains an additional 30% of their score**.
-
-### ⚔️ **Hero vs Creature (15% Bonus)**
-- Heroes gain **+10 bonus** when fighting creatures.
-- If the **Hero and Creature share elements**, the **Hero gains an additional 15% of their score**.
-
-### 👑 **God vs Hero (20% Bonus)**
-- Gods gain **+10 bonus** when fighting heroes.
-- If the **God and Hero share elements**, the **God gains an additional 20% of their score**.
-
----
-
-## 🔥 7️⃣ Elemental Synergies
+## 🔥 6️⃣ Elemental Synergies
 Some **elements counter others**, granting **bonus scores**.
 
 ### 🌌 **Elemental Advantage Rules**
@@ -140,42 +129,14 @@ Some **elements counter others**, granting **bonus scores**.
 | Earth    | Air         | +25        |
 | Fire     | Ice, Nature | +25        |
 | Lightning | Metal       | +25        |
-| Wisdom   | Madness     | +25        |
-| Heroism  | Fear        | +25        |
-| Strategy | Brutality   | +25        |
-| Divine   | Underworld  | +25        |
-| Healing  | Poison      | +25        |
 
 ### 🔢 **Calculation:**
 if (elementSynergies[element] && elementSynergies[element].includes(opponentElement)) { score += 25; }
 
 ---
 
-## 🎯 8️⃣ Critical Hit Chance
-- Each fighter has a **critical hit chance**.
-- If a **random roll is below the crit chance**, they deal **50% bonus damage**.
-
-### 🔢 **Calculation:**
-if (Math.random() < criticalHitChance) { score += fighter.stats.strength * 0.5; }
-
----
-
-## 🎭 Example Calculation
-Base Stats Contribution: +250 
-Artifact Bonus: +30 
-Stage Bonus: +20 
-Weather Bonus: -10 
-Corruption Boost: +40 
-God vs Creature Bonus: +20 
-Elemental Synergy: +25 
-Critical Hit Bonus: +50 
-Final Score: 425
-
----
-
 ## 🚀 Conclusion
 This system ensures a **fair, strategic, and engaging combat experience** by considering multiple factors such as **stats, matchups, synergies, and artifacts**.
 
----
-
-
+## License
+This project is open-source and can be modified freely. Contributions are welcome!
