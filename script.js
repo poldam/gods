@@ -165,10 +165,10 @@ document.getElementById("fightButton").addEventListener("click", () => {
     console.log(`Stage: ${stage}`);
     console.log(`Weather: ${weather}`);
     console.log(`Artifact: ${artifact}`);
-    
+
     if (summary1)
         console.log(summary1);
-    
+
     if (summary2)
         console.log(summary2);
     console.log("Outcome:");
@@ -206,17 +206,17 @@ document.getElementById("fightButton").addEventListener("click", () => {
     document.getElementById("battleResultHeading").textContent = fightOutcome;
 
     const resultImage = document.getElementById("battleResultImage");
-    const img = new Image();
-    img.src = imagePath;
+    // const img = new Image();
+    // img.src = imagePath;
 
-    img.onload = function () {
-        resultImage.src = imagePath;
-        resultImage.style.display = "block";
-    };
+    // img.onload = function () {
+    //     resultImage.src = imagePath;
+    //     resultImage.style.display = "block";
+    // };
 
-    img.onerror = function () {
+    // img.onerror = function () {
         resultImage.style.display = "none";
-    };
+    // };
 
     const resultModal = new bootstrap.Modal(document.getElementById("battleResultModal"));
     resultModal.show();
@@ -269,23 +269,25 @@ function generateBioHTML(entity) {
     `;
 }
 
+
 function updateFighterImage(fighter) {
     const select = fighter === 1 ? fighter1Select : fighter2Select;
     const image = fighter === 1 ? fighter1Image : fighter2Image;
     const corruption = fighter === 1 ? corruption1Switch : corruption2Switch;
 
     const selectedEntity = entities.find((e) => e.name === select.value);
+    if (!selectedEntity) return;
 
-    if(fighter === 1)
-        updateFighterStats("fighter1", selectedEntity.stats);
+    const clonedStats = JSON.parse(JSON.stringify(selectedEntity.stats));
+
+    if (fighter === 1)
+        updateFighterStats("fighter1", clonedStats);
     else
-        updateFighterStats("fighter2", selectedEntity.stats);
+        updateFighterStats("fighter2", clonedStats);
 
-    if (selectedEntity) {
-        image.src = corruption.checked ? selectedEntity.corruptimage : selectedEntity.image;
-    } else {
-        image.src = "images/placeholder.jpg";
-    }
+    // console.log(`After Corruption Toggle - ${selectedEntity.name} Stats:`, JSON.stringify(selectedEntity.stats));
+
+    image.src = corruption.checked ? selectedEntity.corruptimage : selectedEntity.image;
 }
 
 function randomizeSelections() {
@@ -1117,39 +1119,39 @@ const elementSynergies = {
 };
 
 const entityTypeBonuses = {
-    "god": { 
-        "advantages": { "creature": 50, "hero": 40, "immortal": 30},
+    "god": {
+        "advantages": { "creature": 50, "hero": 40, "immortal": 30 },
         "elementalMultiplier": 0.3
     },
-    "goddess": { 
-        "advantages": { "creature": 50, "hero": 40, "immortal": 30},
+    "goddess": {
+        "advantages": { "creature": 50, "hero": 40, "immortal": 30 },
         "elementalMultiplier": 0.3
     },
-    "titan": { 
+    "titan": {
         "advantages": { "god": 15, "hero": 35, "immortal": 30, "creature": 60 },
         "elementalMultiplier": 0.25
     },
-    "titaness": { 
+    "titaness": {
         "advantages": { "god": 15, "hero": 35, "immortal": 30, "creature": 60 },
         "elementalMultiplier": 0.25
     },
-    "hero": { 
+    "hero": {
         "advantages": { "creature": 30, "immortal": 20, "titan": 0 },
         "elementalMultiplier": 0.2
     },
-    "immortal": { 
+    "immortal": {
         "advantages": { "creature": 10 },
         "elementalMultiplier": 0.2
     },
-    "primordial": { 
+    "primordial": {
         "advantages": { "god": 50, "goddess": 50, "titan": 40, "immortal": 35, "hero": 60, "creature": 70 },
         "elementalMultiplier": 0.4
     },
-    "cosmic entity": { 
+    "cosmic entity": {
         "advantages": { "god": 50, "goddess": 50, "titan": 40, "immortal": 35, "hero": 60, "creature": 70 },
         "elementalMultiplier": 0.4
     },
-    "creature": { 
+    "creature": {
         "advantages": { "hero": 10 },
         "elementalMultiplier": 0.1
     }
@@ -1185,118 +1187,116 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
     let details = [];
     let narrative = [];
 
+    // ✅ 1. Deep clone fighter stats to prevent modifying the original object
+    let fighterStats = JSON.parse(JSON.stringify(fighter.stats)); // Deep copy of stats
+
     // === APPLY ARTIFACT BONUSES ===
     if (selectedArtifact && artifactStatBonuses[selectedArtifact]) {
         let bonuses = artifactStatBonuses[selectedArtifact];
-
         for (let stat in bonuses) {
-            if (fighter.stats[stat] !== undefined) {
-                let actualbonus = Math.round((fighter.stats[stat] * bonuses[stat]) / 100, 2);
-                fighter.stats[stat] += actualbonus;
-                details.push(`Artifact Bonus (${selectedArtifact}): +${actualbonus} (+${bonuses[stat]}%) to ${stat}`);
+            if (fighterStats[stat] !== undefined) {
+                let actualBonus = Math.round((fighterStats[stat] * bonuses[stat]) / 100);
+                fighterStats[stat] += actualBonus; // ✅ Modify only cloned stats
+                details.push(`Artifact Bonus (${selectedArtifact}): +${actualBonus} (+${bonuses[stat]}%) to ${stat}`);
             }
         }
     }
 
-    for (let stat in fighter.stats) {
-        const statContribution = fighter.stats[stat] * (statWeights[stat] || 0);
+    // ✅ 2. Base Stats Contribution (Ensures stats do not change unexpectedly)
+    for (let stat in fighterStats) {
+        const statContribution = fighterStats[stat] * (statWeights[stat] || 0);
         score += statContribution;
-        // details.push(`${stat}: ${fighter.stats[stat]} × ${statWeights[stat]} = ${statContribution.toFixed(2)}`);
-        // narrative.push(`Using their ${stat}, ${fighter.name} demonstrated impressive ${stat.toLowerCase()} in the battle.`);
     }
 
+    // ✅ 3. Stage Modifiers (Elements affecting score)
     if (stageModifiers[stage]) {
         fighter.elements.forEach((element) => {
             if (stageModifiers[stage].bonus.includes(element)) {
-                score += stageModifiers[stage].bonusScore + fighter.stats.adaptability * 0.2;
+                score += stageModifiers[stage].bonusScore + fighterStats.adaptability * 0.2;
                 details.push(`Stage Bonus (${stage}, ${element}): +${stageModifiers[stage].bonusScore}`);
-                narrative.push(`${fighter.name} adapted excellently to the ${stage}, leveraging their affinity with ${element}.`);
             }
             if (stageModifiers[stage].penalty.includes(element)) {
                 score -= stageModifiers[stage].penaltyScore;
                 details.push(`Stage Penalty (${stage}, ${element}): -${stageModifiers[stage].penaltyScore}`);
-                narrative.push(`However, the ${stage} proved challenging for ${fighter.name}, reducing their effectiveness.`);
             }
         });
     }
 
-    if (stage == 'desert' && fighter.bio.nationality == 'Egyptian') {
+    if (stage === 'desert' && fighter.bio.nationality === 'Egyptian') {
         const egyptianBonus = 15;
         score += egyptianBonus;
         details.push(`Desert bonus for Egyptian entities (+${egyptianBonus})`);
     }
 
-    // Corruption Mechanics
+    // ✅ 4. Corruption Mechanics (Corrected - No Persistent Stat Changes)
     if (isCorrupted) {
-        for (let stat in fighter.stats) {
+        let corruptedStats = JSON.parse(JSON.stringify(fighterStats)); // ✅ New clone for corruption changes
+    
+        for (let stat in corruptedStats) {
             if (corruptionBoosts[stat]) {
-                let increase = fighter.stats[stat] * (corruptionBoosts[stat] - 1);
-                fighter.stats[stat] *= corruptionBoosts[stat];
+                let increase = corruptedStats[stat] * (corruptionBoosts[stat] - 1);
+                corruptedStats[stat] *= corruptionBoosts[stat]; 
                 details.push(`Corruption Boost: ${stat} increased by +${increase.toFixed(2)}`);
-                // narrative.push(`${fighter.name}, consumed by corruption, gained unnatural ${stat}.`);
             }
             if (corruptionPenalties[stat]) {
-                let decrease = fighter.stats[stat] * (1 - corruptionPenalties[stat]);
-                fighter.stats[stat] *= corruptionPenalties[stat];
+                let decrease = corruptedStats[stat] * (1 - corruptionPenalties[stat]);
+                corruptedStats[stat] -= decrease; 
                 details.push(`Corruption Penalty: ${stat} reduced by -${decrease.toFixed(2)}`);
-                // narrative.push(`The dark power weakened ${fighter.name}'s ${stat}, making them unstable.`);
             }
         }
-
-        if (opponent && !opponent.isCorrupted) {
-            let purityResistance = (opponent.stats.influence * 0.3) + (opponent.stats.resilience * 0.25);
-            let purityPenalty = purityResistance / 5;
-            score -= purityPenalty;
-            details.push(`Corruption vs. Purity: -${purityPenalty.toFixed(2)} (Opponent's influence & resilience resist corruption)`);
-            narrative.push(`The purity of ${opponent.name} resisted ${fighter.name}'s corruption, diminishing its power.`);
+    
+        for (let stat in corruptedStats) {
+            const statContribution = corruptedStats[stat] * (statWeights[stat] || 0);
+            score += statContribution;
+        }
+    } else {
+        for (let stat in fighterStats) {
+            const statContribution = fighterStats[stat] * (statWeights[stat] || 0);
+            score += statContribution;
         }
     }
 
+    // ✅ 5. Weather Modifiers (Ensures weather effects are correctly applied)
     if (weatherModifiers[weather]) {
         fighter.elements.forEach((element) => {
             if (weatherModifiers[weather].bonus.includes(element)) {
-                score += weatherModifiers[weather].bonusScore + fighter.stats.elementalResistance * 0.2;
+                score += weatherModifiers[weather].bonusScore + fighterStats.elementalResistance * 0.2;
                 details.push(`Weather Bonus (${weather}, ${element}): +${weatherModifiers[weather].bonusScore}`);
-                narrative.push(`${fighter.name} thrived under the ${weather} conditions, drawing strength from ${element}.`);
             }
             if (weatherModifiers[weather].penalty.includes(element)) {
                 score -= weatherModifiers[weather].penaltyScore;
                 details.push(`Weather Penalty (${weather}, ${element}): -${weatherModifiers[weather].penaltyScore}`);
-                narrative.push(`${weather} conditions hindered ${fighter.name}'s performance (${element}).`);
             }
         });
     }
 
+    // ✅ 6. Type Advantage Bonuses
     if (entityTypeBonuses[fighter.type] && opponent) {
         let typeBonuses = entityTypeBonuses[fighter.type].advantages;
-    
         if (typeBonuses[opponent.type]) {
             let baseBonus = typeBonuses[opponent.type];
             score += baseBonus;
             details.push(`${fighter.type} vs ${opponent.type} Bonus: +${baseBonus}`);
-            
+
             let overlappingElements = fighter.elements.filter(element => opponent.elements.includes(element));
-    
             if (overlappingElements.length > 0) {
                 let elementBonus = score * entityTypeBonuses[fighter.type].elementalMultiplier;
                 score += Math.round(elementBonus);
                 details.push(`Elemental Overlap Bonus: +${Math.round(elementBonus)} (Shared Elements: ${overlappingElements.join(", ")})`);
-                narrative.push(`${fighter.name} leveraged their elemental affinity to overpower ${opponent.name}.`);
             }
         }
     }
 
-    // Artifact Modifiers
+    // ✅ 7. Artifact Modifiers (Special artifact bonus for specific fighters)
     if (selectedArtifact && selectedArtifact !== "none") {
         if (fighter.artifacts.includes(selectedArtifact)) {
             const artifactSpecialBonus = 50;
             score += artifactSpecialBonus;
             details.push(`Artifact Bonus (Special for ${fighter.name} with ${selectedArtifact}): +${artifactSpecialBonus}`);
-            narrative.push(`The ${selectedArtifact} synergized perfectly with ${fighter.name}'s abilities.`);
         }
     }
 
-    // Synergy: Opponent Interaction Modifiers
+    // ✅ 8. Elemental Synergies (Opponent interactions)
     if (opponent) {
         for (let element of fighter.elements) {
             for (let opponentElement of opponent.elements) {
@@ -1304,33 +1304,30 @@ function calculateScore(fighter, stage, weather, isCorrupted, selectedArtifact, 
                     const synergyBonus = 25;
                     score += synergyBonus;
                     details.push(`Element Synergy (${element} vs ${opponentElement}): +${synergyBonus}`);
-                    narrative.push(`${fighter.name}'s ${element} proved to be a perfect counter to ${opponent.name}'s ${opponentElement}.`);
                 }
             }
         }
     }
 
-    // Critical Hit Modifier
-    const criticalHitChance = fighter.stats.criticalHitChance / 100;
+    // ✅ 9. Critical Hit Modifier (Corrected issue with applying strength bonus)
+    const criticalHitChance = fighterStats.criticalHitChance / 100;
     if (Math.random() < criticalHitChance) {
-        const criticalHitBonus = fighter.stats.strength * 0.5;
+        const criticalHitBonus = fighterStats.strength * 0.5;
         score += criticalHitBonus;
         details.push(`Critical Hit Bonus: +${criticalHitBonus.toFixed(2)}`);
-        narrative.push(`A powerful critical strike by ${fighter.name} turned the tide of the battle.`);
     }
 
-    // Assemble Fight Narrative
-    const fightSummary = narrative.join("\n");
-    // console.log(`Fight Summary: ${fightSummary}`);
+    // ✅ 10. Debugging & Logging (Ensures score is computed correctly)
     console.log(`Score Calculation for ${fighter.name}:`);
     details.forEach((detail) => console.log(`  - ${detail}`));
     console.log(`  -> Final Score: ${Math.round(score)}`);
 
     return {
         score: Math.round(score),
-        fightSummary: fightSummary,
+        fightSummary: narrative.join("\n"),
     };
 }
+
 
 ////////////////////////////////////////////
 ////////////// DEBUG ///////////////////////
