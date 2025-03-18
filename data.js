@@ -4867,5 +4867,99 @@ const entities = [
       "powers": "Knowledge of the cosmos, divine wisdom, mastery over fate and civilization.",
       "influence": "Revered as the first sage-king and one of the most important figures in Chinese mythology."
     }
+  },
+  {
+    "name": "Ajax the Great (Telamonian Ajax)",
+    "type": "hero",
+    "stats": {
+      "strength": 95,
+      "stamina": 90,
+      "speed": 70,
+      "healing": 50,
+      "influence": 60,
+      "sneakiness": 30,
+      "agility": 75,
+      "defense": 98,
+      "magicPower": 20,
+      "criticalHitChance": 25,
+      "resilience": 90,
+      "intimidation": 85,
+      "adaptability": 70,
+      "elementalResistance": 60
+    },
+    "elements": ["battle", "warrior", "strength"],
+    "artifacts": ["Shield of Ajax", "Spear of Ajax"],
+    "image": "./images/ajax_great.webp",
+    "corruptimage": "./images/ajax_great2.webp",
+    "code": "ajax_great",
+    "bio": {
+      "nationality": "Greek",
+      "description": "A colossal warrior and one of the strongest Greek heroes in the Trojan War.",
+      "powers": "Unmatched strength, expert combat skills, and near-impenetrable defense.",
+      "influence": "Respected as a warrior of immense valor, but his tragic fate remains a key part of Greek mythology."
+    }
+  },
+  {
+    "name": "Ajax the Lesser (Ajax of Locris)",
+    "type": "hero",
+    "stats": {
+      "strength": 80,
+      "stamina": 85,
+      "speed": 95,
+      "healing": 40,
+      "influence": 50,
+      "sneakiness": 70,
+      "agility": 90,
+      "defense": 60,
+      "magicPower": 15,
+      "criticalHitChance": 30,
+      "resilience": 70,
+      "intimidation": 65,
+      "adaptability": 80,
+      "elementalResistance": 55
+    },
+    "elements": ["battle", "speed", "agility"],
+    "artifacts": ["Sword of Oilean Ajax", "Achaean Armor"],
+    "image": "./images/ajax_lesser.webp",
+    "corruptimage": "./images/ajax_lesser2.webp",
+    "code": "ajax_lesser",
+    "bio": {
+      "nationality": "Greek",
+      "description": "A swift and deadly warrior, known for his speed and aggressive combat style.",
+      "powers": "Extreme agility, quick reflexes, and masterful swordsmanship.",
+      "influence": "Remembered for his role in the Trojan War, but his arrogance and dishonor led to his downfall."
+    }
+  },
+  {
+    "name": "Castor and Polydeuces",
+    "type": "demigods",
+    "stats": {
+      "strength": 85,
+      "stamina": 90,
+      "speed": 80,
+      "healing": 60,
+      "influence": 75,
+      "sneakiness": 40,
+      "agility": 85,
+      "defense": 80,
+      "magicPower": 50,
+      "criticalHitChance": 30,
+      "resilience": 85,
+      "intimidation": 70,
+      "adaptability": 75,
+      "elementalResistance": 70
+    },
+    "elements": ["warrior", "celestial", "immortality"],
+    "artifacts": ["Twin Star Shield", "Boxing Gauntlets of Polydeuces"],
+    "image": "./images/castor_polydeuces.webp",
+    "corruptimage": "./images/castor_polydeuces2.webp",
+    "code": "castor_polydeuces",
+    "bio": {
+      "nationality": "Greek",
+      "description": "Castor and Polydeuces, also known as the Dioscuri, were the twin sons of Zeus and Leda. Castor was a renowned horseman, while Polydeuces was an exceptional boxer.",
+      "powers": "Castor possessed unparalleled skills in horseback riding and warfare, while Polydeuces had divine boxing abilities and resilience. Upon Castor's death, Zeus granted them a shared immortality, allowing them to alternate between the mortal and divine realms.",
+      "influence": "Worshipped as protectors of sailors and warriors, they were later immortalized as the Gemini constellation."
+    }
   }
+
 ];
